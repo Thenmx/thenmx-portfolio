@@ -398,6 +398,11 @@
   .cycle-loop-mobile { display: flex; }
 }
 
+/* phones: breathing room under the INSIGHT node (matches the 20px node gap) */
+@media (max-width: 640px) {
+  .cycle-loop-mobile { margin-top: 20px; }
+}
+
 @keyframes cycleLineFlowV {
   from { top: -160px; }
   to   { top: 100%; }
