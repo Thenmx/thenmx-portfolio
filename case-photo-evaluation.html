@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en" data-pf-screen-scale>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NMX, Photo AI WF Evaluation · Case Study</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/topbar.css" />
+  <link rel="stylesheet" href="css/case.css" />
+  <link rel="stylesheet" href="css/utility-bar.css" />
+  <link rel="stylesheet" href="css/side-nav.css" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHX9JL5MT3"></script>
+  <script src="js/analytics.js"></script>
+</head>
+<body>
+
+  <!-- ============ TOPBAR ============ -->
+  <header class="cs-topbar" data-watch>
+    <span class="cs-signature">
+      <span class="cs-signature-full">NANDO MORI — PRODUCT DESIGNER — PORTFOLIO 2027</span>
+      <span class="cs-signature-short">NANDO MORI — PRODUCT DESIGNER</span>
+    </span>
+    <a class="cs-back" href="index.html#hero">
+      <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3L5 8l5 5"/></svg>
+      BACK TO PROJECTS
+    </a>
+  </header>
+
+  <div class="cs-shell">
+
+    <!-- ============ SECTION RAIL ============ -->
+    <aside class="cs-rail" aria-label="Page sections">
+      <a class="cs-rail-link active" href="#overview">01 / OVERVIEW</a>
+      <a class="cs-rail-link" href="#engines">02 / ENGINES</a>
+      <a class="cs-rail-link" href="#architecture">03 / ARCHITECTURE</a>
+      <a class="cs-rail-link" href="#challenges">04 / CHALLENGES</a>
+      <a class="cs-rail-link" href="#roadmap">05 / ROADMAP</a>
+    </aside>
+
+    <main class="cs-main">
+
+      <!-- ============ 01 · HERO ============ -->
+      <section class="cs-section cs-hero" id="overview" data-watch>
+        <div class="cs-hero-grid">
+
+          <div class="cs-head">
+            <div class="cs-eyebrow">
+              <span class="live-dot"></span>
+              <span>01 / WORKFLOW EVALUATION</span>
+            </div>
+            <h1 class="cs-hero-title">Photo AI<br /><span class="cs-title-grad">WF Evaluation</span></h1>
+            <p class="cs-hero-desc">
+              An AI evaluation system designed to compare image-enhancement workflows,
+              measure visual improvement without sacrificing property
+              <b>fidelity</b>, and identify the best workflow according to shared
+              evaluation criteria.
+            </p>
+            <div class="cs-stats">
+              <div class="cs-stat"><b>50+</b><span>IMAGES TESTED</span></div>
+              <div class="cs-stat"><b>4</b><span>WORKFLOW ENGINES</span></div>
+              <div class="cs-stat"><b>4</b><span>EVALUATION DIMENSIONS</span></div>
+            </div>
+            <div class="cs-stack">
+              <span class="cs-stack-chip">OpenAI</span>
+              <span class="cs-stack-chip">Claude</span>
+              <span class="cs-stack-chip">n8n</span>
+              <span class="cs-stack-chip">Supabase</span>
+            </div>
+          </div>
+
+          <!-- completed dashboard: the finished system, alive but calm -->
+          <div class="cs-dash glass cs-reveal">
+            <div class="cs-dash-head">
+              <span class="cs-dash-title">EXECUTION MONITOR</span>
+              <span class="cs-dash-chip">
+                <svg viewBox="0 0 16 16" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.5 3.5L13 4.5"/></svg>
+                RUN COMPLETE
+              </span>
+            </div>
+            <p class="cs-dash-note">EXAMPLE RUN · ILLUSTRATIVE FLOW, NOT AGGREGATE RESULTS</p>
+
+            <div class="cs-dash-flow">
+              <div class="cs-flow-line">
+                <span class="cs-flow-particle cs-loop"></span>
+                <span class="cs-flow-particle cs-loop p2"></span>
+              </div>
+              <div class="cs-fnode">
+                <div class="cs-fnode-icon" style="--d:0s">
+                  <svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 11V3M4.5 6.5L8 3l3.5 3.5M3 13h10"/></svg>
+                </div>
+                <span class="cs-fnode-name">INPUT</span>
+                <span class="cs-fnode-sub">Image uploaded</span>
+              </div>
+              <div class="cs-fnode">
+                <div class="cs-fnode-icon" style="--d:0.9s">
+                  <svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v3M8 11v3M2 8h3M11 8h3M4 4l2 2M10 10l2 2M12 4l-2 2M6 10l-2 2"/></svg>
+                </div>
+                <span class="cs-fnode-name">ENHANCER</span>
+                <span class="cs-fnode-sub">3 variants</span>
+              </div>
+              <div class="cs-fnode">
+                <div class="cs-fnode-icon" style="--d:1.8s">
+                  <svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.5l5 2v4c0 3-2.2 5.3-5 7-2.8-1.7-5-4-5-7v-4l5-2z"/><path d="M5.8 8l1.6 1.6L10.6 6"/></svg>
+                </div>
+                <span class="cs-fnode-name">FIDELITY</span>
+                <span class="cs-fnode-sub">Gate passed</span>
+              </div>
+              <div class="cs-fnode">
+                <div class="cs-fnode-icon" style="--d:2.7s">
+                  <svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.8l1.9 3.9 4.3.6-3.1 3 .7 4.2L8 11.5l-3.8 2 .7-4.2-3.1-3 4.3-.6L8 1.8z"/></svg>
+                </div>
+                <span class="cs-fnode-name">QUALITY</span>
+                <span class="cs-fnode-sub">Scored</span>
+              </div>
+              <div class="cs-fnode">
+                <div class="cs-fnode-icon" style="--d:3.6s">
+                  <svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><circle cx="8" cy="8" r="2.4"/><path d="M8 2v1.6M8 12.4V14M2 8h1.6M12.4 8H14"/></svg>
+                </div>
+                <span class="cs-fnode-name">RECOMMEND</span>
+                <span class="cs-fnode-sub">Best selected</span>
+              </div>
+            </div>
+
+            <div class="cs-dash-body">
+              <figure class="cs-shot">
+                <img src="assets/original.jpg" alt="Original property photo before enhancement" />
+                <span class="cs-shot-tag">ORIGINAL</span>
+                <figcaption><span>LIVING ROOM</span><b>SOURCE</b></figcaption>
+              </figure>
+              <figure class="cs-shot is-best">
+                <img src="assets/enhanced.jpg" alt="AI-enhanced property photo selected as best result" />
+                <span class="cs-shot-tag">ENHANCED · BEST</span>
+                <figcaption><span>WORKFLOW B</span><b>GATE PASSED</b></figcaption>
+              </figure>
+              <aside class="cs-rec">
+                <span class="cs-rec-label">RECOMMENDATION</span>
+                <span class="cs-rec-name">Nano Banana</span>
+                <span class="cs-rec-sub">Workflow B · Gemini</span>
+                <span class="cs-rec-score"><b>PASS</b><span>FIDELITY GATE</span></span>
+                <a class="cs-rec-link" href="#challenges">VIEW FULL REPORT ↓</a>
+              </aside>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ============ 02 · ENGINES ============ -->
+      <section class="cs-section" id="engines" data-watch>
+        <div class="cs-head">
+          <!-- project origin: how the concept was reframed into evaluation -->
+          <div class="cs-origin">
+            <div class="cs-col-label">FROM CONCEPT TO EVALUATION</div>
+            <p class="cs-sub">The project started as a Photo Enhancer concept. After presenting the idea to a senior product stakeholder, one question reframed the exploration: how do you determine which AI workflow actually performs better?</p>
+            <p class="cs-sub">That feedback shifted the project from image generation to workflow evaluation, introducing explicit criteria for visual quality and fidelity.</p>
+          </div>
+          <div class="cs-eyebrow">
+            <span class="live-dot"></span>
+            <span>02 / ENGINES</span>
+            <span class="eyebrow-sep">/</span>
+            <span class="eyebrow-dim">EACH ENGINE OWNS ONE JUDGEMENT</span>
+          </div>
+          <h2 class="cs-title">The four workflow <span class="cs-title-grad">engines</span></h2>
+          <p class="cs-sub">Each engine owns a specific role inside the evaluation framework.</p>
+        </div>
+
+        <div class="cs-engines cs-reveal">
+
+          <article class="cs-engine">
+            <div class="cs-engine-top">
+              <span class="cs-engine-icon">
+                <svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2.5L3 9h3.5L6 13.5 12.5 7H9l.5-4.5z"/></svg>
+              </span>
+              <span class="cs-engine-num">01</span>
+            </div>
+            <h3>Enhancer</h3>
+            <span class="cs-engine-role">IMAGE ENHANCEMENT ENGINE</span>
+            <p>Generates enhanced versions of the original property image through interchangeable AI workflows.</p>
+            <div class="cs-io">
+              <span class="cs-io-label">INPUT</span>
+              <span class="cs-io-item">Original image</span>
+              <span class="cs-io-item">Enhancement parameters</span>
+            </div>
+            <div class="cs-io">
+              <span class="cs-io-label">OUTPUT</span>
+              <span class="cs-io-item">Enhanced image</span>
+              <span class="cs-io-item">Processing metadata</span>
+            </div>
+          </article>
+
+          <article class="cs-engine">
+            <div class="cs-engine-top">
+              <span class="cs-engine-icon">
+                <svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.5l5 2v4c0 3-2.2 5.3-5 7-2.8-1.7-5-4-5-7v-4l5-2z"/><path d="M5.8 8l1.6 1.6L10.6 6"/></svg>
+              </span>
+              <span class="cs-engine-num">02</span>
+            </div>
+            <h3>Fidelity Judge</h3>
+            <span class="cs-engine-role">STRUCTURAL FIDELITY ENGINE</span>
+            <p>Checks whether the enhanced image still represents the original property accurately.</p>
+            <div class="cs-io">
+              <span class="cs-io-label">INPUT</span>
+              <span class="cs-io-item">Original image</span>
+              <span class="cs-io-item">Enhanced image</span>
+            </div>
+            <div class="cs-io">
+              <span class="cs-io-label">OUTPUT</span>
+              <span class="cs-io-item">Structure consistency</span>
+              <span class="cs-io-item">Furniture consistency</span>
+              <span class="cs-io-item">Object preservation</span>
+              <span class="cs-io-item">Material consistency</span>
+            </div>
+          </article>
+
+          <article class="cs-engine">
+            <div class="cs-engine-top">
+              <span class="cs-engine-icon">
+                <svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.8l1.9 3.9 4.3.6-3.1 3 .7 4.2L8 11.5l-3.8 2 .7-4.2-3.1-3 4.3-.6L8 1.8z"/></svg>
+              </span>
+              <span class="cs-engine-num">03</span>
+            </div>
+            <h3>Quality Evaluator</h3>
+            <span class="cs-engine-role">VISUAL QUALITY ENGINE</span>
+            <p>Measures whether the enhanced result actually improves the visual quality of the source image.</p>
+            <div class="cs-io">
+              <span class="cs-io-label">INPUT</span>
+              <span class="cs-io-item">Original image</span>
+              <span class="cs-io-item">Enhanced image</span>
+            </div>
+            <div class="cs-io">
+              <span class="cs-io-label">OUTPUT</span>
+              <span class="cs-io-item">Visibility</span>
+              <span class="cs-io-item">Clarity</span>
+              <span class="cs-io-item">Composition</span>
+              <span class="cs-io-item">Overall quality score</span>
+            </div>
+          </article>
+
+          <article class="cs-engine">
+            <div class="cs-engine-top">
+              <span class="cs-engine-icon">
+                <svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><circle cx="8" cy="8" r="2.4"/><path d="M8 2v1.6M8 12.4V14M2 8h1.6M12.4 8H14"/></svg>
+              </span>
+              <span class="cs-engine-num">04</span>
+            </div>
+            <h3>Recommendation</h3>
+            <span class="cs-engine-role">DECISION ENGINE</span>
+            <p>Ranks eligible workflows using fidelity, visual quality, cost and processing time according to configurable business priorities.</p>
+            <div class="cs-io">
+              <span class="cs-io-label">INPUT</span>
+              <span class="cs-io-item">Fidelity results</span>
+              <span class="cs-io-item">Quality results</span>
+              <span class="cs-io-item">Cost data</span>
+              <span class="cs-io-item">Processing-time data</span>
+            </div>
+            <div class="cs-io">
+              <span class="cs-io-label">OUTPUT</span>
+              <span class="cs-io-item">Recommended workflow</span>
+              <span class="cs-io-item">Comparative evaluation</span>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ============ 03 · ARCHITECTURE ============ -->
+      <section class="cs-section" id="architecture" data-watch>
+        <div class="cs-head">
+          <div class="cs-eyebrow">
+            <span class="live-dot"></span>
+            <span>03 / ARCHITECTURE</span>
+            <span class="eyebrow-sep">/</span>
+            <span class="eyebrow-dim">LIVE ORCHESTRATION · LOOPING</span>
+          </div>
+          <h2 class="cs-title">System <span class="cs-title-grad">architecture</span></h2>
+          <p class="cs-sub">The workflow orchestrated with n8n and frontier AI models, watch one execution travel the pipeline.</p>
+        </div>
+
+        <div class="cs-reveal">
+          <div class="cs-pipe-scroll">
+            <div class="cs-pipe" id="csPipe">
+              <div class="cs-pipe-track"><div class="cs-pipe-fill" id="csPipeFill"></div></div>
+              <div class="cs-pipe-nodes">
+
+                <div class="cs-node">
+                  <div class="cs-node-icon">
+                    <svg viewBox="0 0 16 16" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="4" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="8" cy="4" r="2"/><path d="M7 5.7L5 10M9 5.7L11 10M6 12h4"/></svg>
+                  </div>
+                  <span class="cs-node-name">WEBHOOK</span>
+                  <span class="cs-node-sub">Input</span>
+                </div>
+
+                <div class="cs-node">
+                  <div class="cs-node-icon">
+                    <svg viewBox="0 0 16 16" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4L2.5 8 6 12M10 4l3.5 4L10 12"/></svg>
+                  </div>
+                  <span class="cs-node-name">PARSER</span>
+                  <span class="cs-node-sub">Prepare</span>
+                </div>
+
+                <div class="cs-node">
+                  <div class="cs-node-icon">
+                    <svg viewBox="0 0 16 16" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="10" rx="2"/><circle cx="6" cy="7" r="1.3"/><path d="M14 11l-3.5-3.5L4 14"/></svg>
+                  </div>
+                  <span class="cs-node-name">ENHANCER</span>
+                  <span class="cs-node-sub">Generate</span>
+                </div>
+
+                <div class="cs-node">
+                  <div class="cs-node-icon">
+                    <svg viewBox="0 0 16 16" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.5l5 2v4c0 3-2.2 5.3-5 7-2.8-1.7-5-4-5-7v-4l5-2z"/><path d="M5.8 8l1.6 1.6L10.6 6"/></svg>
+                  </div>
+                  <span class="cs-node-name">FIDELITY</span>
+                  <span class="cs-node-sub">Evaluate</span>
+                </div>
+
+                <div class="cs-node">
+                  <div class="cs-node-icon">
+                    <svg viewBox="0 0 16 16" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.8l1.9 3.9 4.3.6-3.1 3 .7 4.2L8 11.5l-3.8 2 .7-4.2-3.1-3 4.3-.6L8 1.8z"/></svg>
+                  </div>
+                  <span class="cs-node-name">QUALITY</span>
+                  <span class="cs-node-sub">Evaluate</span>
+                </div>
+
+                <div class="cs-node">
+                  <div class="cs-node-icon">
+                    <svg viewBox="0 0 16 16" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><circle cx="8" cy="8" r="2.4"/><path d="M8 2v1.6M8 12.4V14M2 8h1.6M12.4 8H14"/></svg>
+                  </div>
+                  <span class="cs-node-name">RECOMMEND</span>
+                  <span class="cs-node-sub">Rank</span>
+                </div>
+
+                <div class="cs-node">
+                  <div class="cs-node-icon">
+                    <svg viewBox="0 0 16 16" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 2.5H3.5A1.5 1.5 0 002 4v8a1.5 1.5 0 001.5 1.5H5M11 2.5h1.5A1.5 1.5 0 0114 4v8a1.5 1.5 0 01-1.5 1.5H11"/></svg>
+                  </div>
+                  <span class="cs-node-name">FORMAT</span>
+                  <span class="cs-node-sub">Structure</span>
+                </div>
+
+                <div class="cs-node">
+                  <div class="cs-node-icon">
+                    <svg viewBox="0 0 16 16" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2L7 9M14 2L9.5 14 7 9 2 6.5 14 2z"/></svg>
+                  </div>
+                  <span class="cs-node-name">RESPOND</span>
+                  <span class="cs-node-sub">Return</span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-infra">
+            <div class="cs-infra-item">
+              <span class="cs-infra-icon">
+                <svg width="24" height="24" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M80 28C80 32.4167 76.3267 36 71.7933 36C67.9733 36 64.76 33.45 63.8467 30H52.3933C50.3867 30 48.6767 31.4133 48.3467 33.3433L48.01 35.3167C47.6948 37.1411 46.7515 38.7979 45.3433 40C46.7167 41.18 47.69 42.8133 48.01 44.6833L48.3433 46.6567C48.5156 47.6027 49.017 48.4573 49.7589 49.0692C50.5007 49.6811 51.4351 50.0108 52.3967 50H55.6467C56.5567 46.55 59.77 44 63.5933 44C68.1267 44 71.7967 47.5833 71.7967 52C71.7967 56.4167 68.12 60 63.5933 60C59.77 60 56.56 57.45 55.6467 54H52.3967C48.3833 54 44.9633 51.1733 44.3033 47.3167L43.9667 45.3433C43.7946 44.3984 43.2941 43.5447 42.5537 42.9329C41.8132 42.3212 40.8804 41.9907 39.92 42H36.5667C35.54 45.28 32.4133 47.6667 28.7133 47.6667C25.0133 47.6667 21.8867 45.28 20.8633 42H16.0567C15.03 45.28 11.9033 47.6667 8.20667 47.6667C3.67333 47.6667 0 44.0833 0 39.6667C0 35.25 3.67333 31.6667 8.20667 31.6667C12.15 31.6667 15.4467 34.3833 16.2333 38H20.69C21.4767 34.3833 24.7733 31.6667 28.7167 31.6667C32.6633 31.6667 35.9567 34.3833 36.7433 38H39.9167C41.92 38 43.6333 36.5867 43.96 34.6567L44.3 32.6833C44.96 28.8267 48.3833 26 52.3933 26H63.8467C64.76 22.55 67.9733 20 71.7933 20C76.3267 20 80 23.5833 80 28ZM75.9 28C75.9 30.21 74.06 32 71.7933 32C69.5267 32 67.6933 30.21 67.6933 28C67.6933 25.79 69.5267 24 71.7933 24C74.06 24 75.8967 25.79 75.8967 28H75.9ZM8.20333 43.6667C10.47 43.6667 12.3033 41.8767 12.3033 39.6667C12.3033 37.4567 10.47 35.6667 8.20333 35.6667C5.93667 35.6667 4.1 37.4567 4.1 39.6667C4.1 41.8767 5.93667 43.6667 8.20333 43.6667ZM28.7133 43.6667C30.98 43.6667 32.8167 41.8767 32.8167 39.6667C32.8167 37.4567 30.9833 35.6667 28.7167 35.6667C26.45 35.6667 24.6133 37.4567 24.6133 39.6667C24.6133 41.8767 26.4467 43.6667 28.7133 43.6667ZM63.5867 56C65.8533 56 67.6867 54.21 67.6867 52C67.6867 49.79 65.8533 48 63.5867 48C61.32 48 59.4867 49.79 59.4867 52C59.4867 54.21 61.32 56 63.5867 56Z" fill="#68CDFB"/></svg>
+              </span>
+              <div><b>n8n</b><span>ORCHESTRATION</span></div>
+            </div>
+            <div class="cs-infra-item">
+              <span class="cs-infra-icon">
+                <svg width="23" height="23" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clipOaiPhoto)"><path fill-rule="evenodd" clip-rule="evenodd" d="M23.0125 21.645V15.995C23.0125 15.52 23.1925 15.1625 23.6075 14.925L34.965 8.385C36.5125 7.4925 38.355 7.0775 40.2575 7.0775C47.3925 7.0775 51.9125 12.6075 51.9125 18.4925C51.9125 18.91 51.9125 19.385 51.8525 19.86L40.0775 12.9625C39.7577 12.7589 39.3866 12.6508 39.0075 12.6508C38.6284 12.6508 38.2573 12.7589 37.9375 12.9625L23.0125 21.645ZM49.535 43.645V30.15C49.535 29.3175 49.1775 28.725 48.4625 28.3075L33.5375 19.625L38.4125 16.83C38.5892 16.7138 38.796 16.6518 39.0075 16.6518C39.219 16.6518 39.4258 16.7138 39.6025 16.83L50.96 23.3725C54.2325 25.2725 56.4325 29.3175 56.4325 33.2425C56.4325 37.7625 53.7575 41.925 49.5325 43.65L49.535 43.645ZM19.505 31.7575L14.63 28.9025C14.2125 28.665 14.0325 28.3075 14.0325 27.8325V14.7475C14.0325 8.385 18.9075 3.5675 25.51 3.5675C28.01 3.5675 30.3275 4.4 32.29 5.8875L20.575 12.6675C19.8625 13.0825 19.505 13.6775 19.505 14.51V31.755V31.7575ZM30 37.82L23.0125 33.895V25.57L30 21.645L36.9875 25.57V33.895L30 37.82ZM34.49 55.895C31.99 55.895 29.6725 55.065 27.71 53.5775L39.425 46.7975C40.1375 46.3825 40.495 45.7875 40.495 44.955V27.71L45.43 30.565C45.8475 30.8025 46.025 31.16 46.025 31.635V44.7175C46.025 51.08 41.09 55.895 34.49 55.895ZM20.3975 42.6375L9.0375 36.095C5.7675 34.1925 3.5675 30.15 3.5675 26.225C3.55979 23.9948 4.21778 21.813 5.45723 19.959C6.69669 18.1049 8.46123 16.6629 10.525 15.8175V29.375C10.525 30.2075 10.8825 30.8025 11.595 31.22L26.4625 39.8425L21.5875 42.6375C21.4109 42.754 21.2041 42.8162 20.9925 42.8162C20.7809 42.8162 20.5741 42.754 20.3975 42.6375ZM19.7425 52.3875C13.0225 52.3875 8.0875 47.335 8.0875 41.09C8.0875 40.615 8.1475 40.14 8.205 39.665L19.92 46.44C20.635 46.8575 21.3475 46.8575 22.06 46.44L36.985 37.82V43.47C36.985 43.945 36.81 44.3025 36.3925 44.54L25.035 51.08C23.4875 51.9725 21.645 52.3875 19.7425 52.3875ZM34.49 59.4625C37.9164 59.4628 41.2377 58.2796 43.8922 56.113C46.5466 53.9464 48.3713 50.9295 49.0575 47.5725C55.7175 45.8475 60 39.6 60 33.24C60 29.0775 58.2175 25.035 55.005 22.12C55.3025 20.87 55.48 19.6225 55.48 18.375C55.48 9.8725 48.5825 3.5075 40.615 3.5075C39.01 3.5075 37.465 3.745 35.915 4.2825C33.14 1.55102 29.4063 0.0139215 25.5125 1.60604e-08C22.0858 -0.000159195 18.7641 1.18341 16.1096 3.35048C13.4551 5.51755 11.6307 8.53506 10.945 11.8925C4.2825 13.6175 0 19.8625 0 26.225C0 30.39 1.7825 34.4325 4.995 37.345C4.6975 38.595 4.52 39.845 4.52 41.0925C4.52 49.595 11.4175 55.9575 19.385 55.9575C20.99 55.9575 22.535 55.72 24.085 55.185C26.8603 57.9175 30.5953 59.4548 34.49 59.4675V59.4625Z" fill="#68CDFB"/></g><defs><clipPath id="clipOaiPhoto"><rect width="60" height="60" fill="white"/></clipPath></defs></svg>
+              </span>
+              <div><b>OpenAI / Gemini</b><span>IMAGE GENERATION</span></div>
+            </div>
+            <div class="cs-infra-item">
+              <span class="cs-infra-icon">
+                <svg width="22" height="22" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clipClaudePhoto)"><path d="M15.7031 53.1875L31.4375 44.3594L31.7031 43.5938L31.4375 43.1719H30.6719L28.0312 43.0156L19.0313 42.7656L11.25 42.4375L3.6875 42.0313L1.78125 41.625L0 39.2812L0.1875 38.1094L1.78125 37.0469L4.0625 37.25L9.125 37.5938L16.7188 38.125L22.2187 38.4531L30.375 39.2969H31.6719L31.8594 38.7813L31.4062 38.4531L31.0625 38.125L23.2031 32.8125L14.7031 27.1875L10.25 23.9531L7.84375 22.3125L6.625 20.7656L6.09375 17.4062L8.28125 15L11.2188 15.2031L11.9687 15.4062L14.9531 17.6875L21.3125 22.6094L29.6094 28.7188L30.8281 29.7344L31.3125 29.3906L31.375 29.1406L30.8281 28.2344L26.3125 20.0781L21.5 11.7812L19.3594 8.34375L18.7969 6.25C18.5781 5.45312 18.4687 4.64063 18.4531 3.8125L20.9531 0.4375L22.3281 -0.015625L25.6406 0.4375L27.0469 1.65625L29.1094 6.375L32.4531 13.8125L37.6406 23.9063L39.1563 26.9063L39.9688 29.6719L40.2656 30.5156H40.7969V30.0313L41.2187 24.3438L42.0156 17.3594L42.7812 8.375L43.0469 5.84375L44.2969 2.8125L46.7812 1.17187L48.7344 2.10938L50.3281 4.39063L50.1094 5.875L49.1563 12.0469L47.2969 21.7188L46.0781 28.1875H46.7812L47.5938 27.375L50.875 23.0156L56.375 16.1406L58.8125 13.4063L61.6406 10.3906L63.4688 8.95312H66.9063L69.4375 12.7188L68.2969 16.6094L64.75 21.0938L61.8125 24.9062L57.5938 30.5781L54.9531 35.1094L55.2031 35.4688L55.8281 35.4063L65.3438 33.3906L70.4844 32.4531L76.625 31.4063L79.4063 32.7031L79.7031 34.0156L78.6094 36.7031L72.0469 38.3281L64.3437 39.875L52.875 42.5781L52.7344 42.6719L52.8906 42.875L58.0469 43.3594L60.25 43.4844H65.6563L75.7188 44.2344L78.3594 45.9688L79.9375 48.0937L79.6719 49.7031L75.625 51.7656L70.1562 50.4688L57.3906 47.4375L53.0156 46.3438H52.4062V46.7031L56.0469 50.2656L62.7344 56.2969L71.0938 64.0625L71.5156 65.9844L70.4375 67.5L69.2969 67.3438L61.9531 61.8281L59.1094 59.3437L52.6875 53.9375H52.2656V54.5L53.75 56.6563L61.5625 68.3906L61.9688 71.9844L61.4062 73.1563L59.375 73.8594L57.1406 73.4531L52.6562 67.0938L47.9375 59.875L44.125 53.3906L43.6562 53.6562L41.4062 77.8438L40.3594 79.0781L37.9219 80.0156L35.9063 78.4844L34.8281 76L35.9063 71.0781L37.2031 64.6719L38.25 59.5781L39.2031 53.25L39.7656 51.1406L39.7187 51L39.25 51.0625L34.4688 57.625L27.2031 67.4375L21.4531 73.5938L20.0781 74.1406L17.6875 72.9063L17.9062 70.7031L19.25 68.7344L27.2031 58.6094L32 52.3438L35.0938 48.7187L35.0781 48.1875H34.8906L13.7656 61.8594L10 62.3594L8.375 60.8438L8.57813 58.3594L9.34375 57.5469L15.7031 53.1719C15.7188 53.1562 15.7031 53.1875 15.7031 53.1875Z" fill="#68CDFB"/></g><defs><clipPath id="clipClaudePhoto"><rect width="80" height="80" fill="white"/></clipPath></defs></svg>
+              </span>
+              <div><b>Claude</b><span>AI EVALUATION</span></div>
+            </div>
+            <div class="cs-infra-item">
+              <span class="cs-infra-icon">
+                <svg width="24" height="24" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M34.875 58.7109C33.3633 60.6211 30.2813 59.5781 30.2461 57.1406L29.7188 21.4453H53.7187C58.0664 21.4453 60.4922 26.4609 57.7852 29.8711L34.875 58.7109Z" fill="#68CDFB"/><path d="M34.875 58.7109C33.3633 60.6211 30.2813 59.5781 30.2461 57.1406L29.7188 21.4453H53.7187C58.0664 21.4453 60.4922 26.4609 57.7852 29.8711L34.875 58.7109Z" fill="#68CDFB" fill-opacity="0.2"/><path d="M25.1247 1.28933C26.6365 -0.620825 29.7185 0.422144 29.7537 2.85964L29.988 38.5432H6.29272C1.94506 38.5432 -0.480721 33.5276 2.22631 30.1175L25.1247 1.28933Z" fill="#68CDFB"/></svg>
+              </span>
+              <div><b>Supabase</b><span>DATA / RESULTS STORAGE</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 04 · CHALLENGES + RESULTS ============ -->
+      <section class="cs-section" id="challenges" data-watch>
+        <div class="cs-head">
+          <div class="cs-eyebrow">
+            <span class="live-dot"></span>
+            <span>04 / CHALLENGES</span>
+            <span class="eyebrow-sep">/</span>
+            <span class="eyebrow-dim">WHAT THE SYSTEM HAD TO SOLVE</span>
+          </div>
+        </div>
+
+        <div class="cs-split cs-reveal">
+
+          <div>
+            <div class="cs-col-label">CHALLENGES SOLVED</div>
+            <div class="cs-challenges">
+
+              <article class="cs-challenge">
+                <h3>
+                  <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.5l5 2v4c0 3-2.2 5.3-5 7-2.8-1.7-5-4-5-7v-4l5-2z"/></svg>
+                  Preserving property fidelity
+                </h3>
+                <div class="cs-pao">
+                  <div class="cs-pao-row"><b>PROBLEM</b><span>AI enhancement can improve visual quality while silently altering geometry, materials, furniture or objects.</span></div>
+                  <div class="cs-pao-row"><b>APPROACH</b><span>Every enhanced image is compared with the original across four structural dimensions before entering the recommendation stage.</span></div>
+                  <div class="cs-pao-row outcome"><b>FINDING</b><span>Tests identified visually improved outputs that were not sufficiently faithful to the source property and were therefore rejected.</span></div>
+                </div>
+              </article>
+
+              <article class="cs-challenge">
+                <h3>
+                  <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="5" height="5" rx="1.2"/><rect x="9" y="2" width="5" height="5" rx="1.2"/><rect x="2" y="9" width="5" height="5" rx="1.2"/><rect x="9" y="9" width="5" height="5" rx="1.2"/></svg>
+                  Comparing different workflows
+                </h3>
+                <div class="cs-pao">
+                  <div class="cs-pao-row"><b>PROBLEM</b><span>Different AI enhancement workflows can produce significantly different results from the same source image.</span></div>
+                  <div class="cs-pao-row"><b>APPROACH</b><span>Every candidate is evaluated through the same shared framework using Fidelity, Quality Improvement, Cost and Processing Time.</span></div>
+                  <div class="cs-pao-row outcome"><b>FINDING</b><span>The evaluation layer can compare different enhancement workflows without changing the underlying assessment logic.</span></div>
+                </div>
+              </article>
+
+              <article class="cs-challenge">
+                <h3>
+                  <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><circle cx="8" cy="8" r="2.4"/><path d="M8 2v1.6M8 12.4V14M2 8h1.6M12.4 8H14"/></svg>
+                  Turning evaluation into a recommendation
+                </h3>
+                <div class="cs-pao">
+                  <div class="cs-pao-row"><b>PROBLEM</b><span>There is no universally best workflow: the optimal choice depends on the business context.</span></div>
+                  <div class="cs-pao-row"><b>APPROACH</b><span>The Recommendation Engine combines fidelity, visual quality, cost and processing time after candidates pass the Fidelity Gate.</span></div>
+                  <div class="cs-pao-row outcome"><b>CURRENT STATE</b><span>The engine is functional, while criterion weighting is still being calibrated around different business priorities.</span></div>
+                </div>
+              </article>
+
+            </div>
+          </div>
+
+          <div>
+            <div class="cs-col-label">WHAT THE TESTS REVEALED</div>
+            <div class="cs-results glass">
+
+              <div class="cs-result">
+                <span class="cs-result-icon">
+                  <svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="5" height="5" rx="1.2"/><rect x="9" y="2" width="5" height="5" rx="1.2"/><rect x="2" y="9" width="5" height="5" rx="1.2"/><rect x="9" y="9" width="5" height="5" rx="1.2"/></svg>
+                </span>
+                <span class="cs-result-num"><span data-count="50" data-decimals="0">0</span>+</span>
+                <span class="cs-result-desc">Real-estate interior images tested across the evaluation framework</span>
+              </div>
+
+              <div class="cs-result">
+                <span class="cs-result-icon">
+                  <svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.8l1.9 3.9 4.3.6-3.1 3 .7 4.2L8 11.5l-3.8 2 .7-4.2-3.1-3 4.3-.6L8 1.8z"/></svg>
+                </span>
+                <span class="cs-result-num"><span data-count="4" data-decimals="0">0</span></span>
+                <span class="cs-result-desc">Shared evaluation dimensions applied to every candidate workflow: fidelity, quality improvement, cost and processing time</span>
+              </div>
+
+              <div class="cs-result">
+                <span class="cs-result-icon">
+                  <svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.5l5 2v4c0 3-2.2 5.3-5 7-2.8-1.7-5-4-5-7v-4l5-2z"/><path d="M5.8 8l1.6 1.6L10.6 6"/></svg>
+                </span>
+                <span class="cs-result-num is-label">FIDELITY GATE</span>
+                <span class="cs-result-desc">Outputs that looked visually improved but were not faithful enough to the original property were detected and rejected</span>
+              </div>
+
+              <div class="cs-result">
+                <span class="cs-result-icon">
+                  <svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"/><path d="M8 4.5V8l2.5 1.5"/></svg>
+                </span>
+                <span class="cs-result-num is-label">COST TESTING</span>
+                <span class="cs-result-desc">OpenAI and Gemini generation costs were compared during workflow evaluation</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ============ 05 · ROADMAP ============ -->
+      <section class="cs-section" id="roadmap" data-watch>
+        <div class="cs-head">
+          <div class="cs-eyebrow">
+            <span class="live-dot"></span>
+            <span>05 / ROADMAP</span>
+            <span class="eyebrow-sep">/</span>
+            <span class="eyebrow-dim">WHERE THE SYSTEM GOES NEXT</span>
+          </div>
+          <h2 class="cs-title">Next <span class="cs-title-grad">steps</span></h2>
+        </div>
+
+        <div class="cs-road cs-reveal">
+          <div class="cs-mile" tabindex="0">
+            <span class="cs-mile-num">01</span>
+            <b>Fidelity Calibration</b>
+            <p>Validate and refine the Fidelity Gate on a larger property dataset.</p>
+          </div>
+          <div class="cs-mile" tabindex="0">
+            <span class="cs-mile-num">02</span>
+            <b>Business Profiles</b>
+            <p>Define recommendation weights for different business priorities.</p>
+          </div>
+          <div class="cs-mile" tabindex="0">
+            <span class="cs-mile-num">03</span>
+            <b>Provider Expansion</b>
+            <p>Compare additional enhancement models through the provider-agnostic architecture.</p>
+          </div>
+          <div class="cs-mile" tabindex="0">
+            <span class="cs-mile-num">04</span>
+            <b>Real Telemetry</b>
+            <p>Integrate real provider-level cost and processing-time tracking.</p>
+          </div>
+          <div class="cs-mile" tabindex="0">
+            <span class="cs-mile-num">05</span>
+            <b>Batch &amp; B2B Analytics</b>
+            <p>Extend evaluation to multi-image processing and aggregated workflow monitoring.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 06 · FINAL CTA ============ -->
+      <section class="cs-section" id="cta" data-watch>
+        <div class="cs-cta-panel glass cs-reveal">
+          <span class="cs-cta-eyebrow"><span class="live-dot"></span>END OF CASE 01</span>
+          <h2 class="cs-cta-title">See the system think<br />in real time.</h2>
+          <p class="cs-cta-sub">
+            This case documents a working evaluation framework, from enhancement and
+            fidelity control to quality assessment and workflow recommendation.
+          </p>
+          <div class="cs-cta-actions">
+            <a class="cs-btn cs-btn-primary" href="index.html#hero">ALL PROJECTS</a>
+          </div>
+        </div>
+      </section>
+
+      <footer class="cs-footer">
+        <span>NMX © 2026</span>
+        <span>AI WORKFLOW PORTFOLIO · CASE 01 / 03</span>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="js/case.js"></script>
+  <script src="js/i18n-dict.js"></script>
+  <script src="js/utility-bar.js"></script>
+  <script src="js/side-nav.js"></script>
+</body>
+</html>

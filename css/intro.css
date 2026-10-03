@@ -1,0 +1,270 @@
+/* ============================================================
+   HOME · INTRODUCTORY HERO  (PHASE 01 repositioning)
+
+   A compact, centered positioning statement that opens the
+   homepage BEFORE the "01 / LIVE AI" workflow demo:
+
+       NANDO MORI — PRODUCT DESIGNER
+       H1  ·  short paragraph  ·  ITA / ENG language selector
+
+   Native to the existing system — no new identity:
+   • tokens from css/hero.css  (--bg, --cyan, --text, --muted,
+     --dim, --mono, --font)
+   • eyebrow uses the shared .pf-shead-eyebrow + .live-dot
+   • headline scale matches the shared .pf-shead-title rhythm
+
+   Load right after css/section-head.css.
+   ============================================================ */
+
+.intro {
+  position: relative;
+  z-index: 1;
+  max-width: 1320px;               /* same container as .hero */
+  margin: 0 auto;
+  padding: 56px 32px 34px;         /* compact cover — not a full landing screen */
+  padding-bottom: 134px;           /* +100px breathing room before AI PROJECT */
+}
+
+/* ---- atmosphere · depth without content ----
+   The same 44px engineering grid used by the stage / ABOUT /
+   CONTACT backgrounds, centred on the composition and faded out
+   radially so it only reads around the content (~5% lines).
+   GRID = stable structure (static ::before).
+   NODES = living signals: .intro-nodes holds the few tiny cyan
+   nodes on grid intersections (outside the text column); each
+   fades on its own slow cycle and the layer drifts a few px.
+   Purely decorative. */
+.intro::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 46% 52% at 50% 44%, rgba(56, 189, 248, 0.035), transparent 70%),
+    linear-gradient(rgba(125, 180, 255, 0.05) 1px, transparent 1px) center / 44px 44px,
+    linear-gradient(90deg, rgba(125, 180, 255, 0.05) 1px, transparent 1px) center / 44px 44px;
+  mask-image: radial-gradient(ellipse 58% 62% at 50% 44%, black 25%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 58% 62% at 50% 44%, black 25%, transparent 100%);
+}
+
+/* no edge mask on the signal layer: the nodes must read as light
+   sources, clearly separate from the faded structural grid */
+.intro-nodes {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  animation: introDrift 26s ease-in-out infinite;
+}
+
+/* nodes sit on line crossings: the grid is centred, so crossings
+   fall at centre − 22px + n·44px on both axes.
+   Each node is a tiny star: a 3px near-white cyan CORE, a tight
+   cyan INNER GLOW and a soft, low-opacity OUTER HALO (both shadows).
+   Size stays tiny — the presence comes from light, not from size. */
+.intro-nodes i {
+  /* light levels (inner glow, outer halo) — same shadow count in every
+     level so the browser interpolates them smoothly */
+  --g-lo:  0 0 3px 0 rgba(56, 189, 248, 0.45), 0 0 10px 2px rgba(56, 189, 248, 0.06);
+  --g-mid: 0 0 4px 1px rgba(56, 189, 248, 0.7), 0 0 14px 3px rgba(56, 189, 248, 0.14);
+  --g-hi:  0 0 5px 1px rgba(110, 215, 255, 0.85), 0 0 18px 4px rgba(56, 189, 248, 0.22);
+  position: absolute;
+  left: calc(50% + var(--x));
+  top: calc(50% + var(--y));
+  width: 3px;
+  height: 3px;
+  margin: -1.5px 0 0 -1.5px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #effcff 0 0.6px, #8fe1ff 1.1px, var(--cyan) 1.5px);
+  opacity: var(--mid);
+  box-shadow: var(--g-mid);
+  animation: introSignal var(--dur) ease-in-out var(--delay) infinite;
+}
+
+/* independent cycles: incommensurate durations, negative delays
+   (each starts mid-cycle) and their own light range.
+   Distribution: all nodes sit on grid crossings AROUND the text —
+   outside a safe area of |x| < 360px across the eyebrow → language
+   selector band (text spans ~±300px, y −222…+144 from centre); only
+   node 11 is nearer the axis, well below the language selector, and
+   node 12 sits in the upper band, right of the eyebrow, above the H1.
+   Left 6 / right 5, deliberately irregular (no rows, no mirroring).
+   Hierarchy: nodes 2, 5 and 9 are the rare bright stars (full core +
+   wider halo at peak); 1, 3, 4, 8 peak medium; 6, 7, 10, 11 stay soft —
+   so only ~2–3 read as luminous at any moment. */
+.intro-nodes i:nth-child(1)  { --x: -418px; --y: -66px;  --dur: 9.2s;  --delay: -3.1s;  --lo: 0.08; --mid: 0.45; --hi: 0.7; }
+.intro-nodes i:nth-child(2)  { --x: -374px; --y: 110px;  --dur: 12.7s; --delay: -8.4s;  --lo: 0.05; --mid: 0.4;  --hi: 1; }
+.intro-nodes i:nth-child(3)  { --x: 374px;  --y: -110px; --dur: 7.3s;  --delay: -1.9s;  --lo: 0.1;  --mid: 0.5;  --hi: 0.75; }
+.intro-nodes i:nth-child(4)  { --x: 418px;  --y: 66px;   --dur: 10.9s; --delay: -6.6s;  --lo: 0.05; --mid: 0.35; --hi: 0.65; }
+.intro-nodes i:nth-child(5)  { --x: -462px; --y: -198px; --dur: 13.8s; --delay: -4.7s;  --lo: 0.06; --mid: 0.45; --hi: 1; }
+.intro-nodes i:nth-child(6)  { --x: -550px; --y: 22px;   --dur: 11.6s; --delay: -2.2s;  --lo: 0.05; --mid: 0.3;  --hi: 0.5; }
+.intro-nodes i:nth-child(7)  { --x: -506px; --y: 198px;  --dur: 8.4s;  --delay: -5.3s;  --lo: 0.06; --mid: 0.32; --hi: 0.55; }
+.intro-nodes i:nth-child(8)  { --x: 550px;  --y: -154px; --dur: 13.1s; --delay: -9.8s;  --lo: 0.07; --mid: 0.4;  --hi: 0.7; }
+.intro-nodes i:nth-child(9)  { --x: 594px;  --y: 110px;  --dur: 10.3s; --delay: -0.6s;  --lo: 0.05; --mid: 0.4;  --hi: 1; }
+.intro-nodes i:nth-child(10) { --x: 462px;  --y: 242px;  --dur: 7.9s;  --delay: -4.1s;  --lo: 0.05; --mid: 0.3;  --hi: 0.5; }
+.intro-nodes i:nth-child(11) { --x: -154px; --y: 242px;  --dur: 12.2s; --delay: -7.2s;  --lo: 0.04; --mid: 0.28; --hi: 0.5; }
+.intro-nodes i:nth-child(12) { --x: 242px;  --y: -242px; --dur: 11.3s; --delay: -5.9s;  --lo: 0.06; --mid: 0.4;  --hi: 0.72; }
+
+.intro-nodes i:nth-child(2),
+.intro-nodes i:nth-child(5),
+.intro-nodes i:nth-child(9) {
+  --g-hi: 0 0 6px 1.5px rgba(150, 228, 255, 0.95), 0 0 24px 6px rgba(56, 189, 248, 0.3);
+}
+
+/* star breathing: DIM → VISIBLE → BRIGHT → VISIBLE → DIM, with a slow
+   rise, a short peak and a long fall (no flashing) */
+@keyframes introSignal {
+  0%, 100% { opacity: var(--lo);  box-shadow: var(--g-lo); }
+  32%      { opacity: var(--mid); box-shadow: var(--g-mid); }
+  56%      { opacity: var(--hi);  box-shadow: var(--g-hi); }
+  74%      { opacity: var(--mid); box-shadow: var(--g-mid); }
+}
+
+/* near-imperceptible drift of the node layer only (grid stays put) */
+@keyframes introDrift {
+  0%, 100% { transform: translate(0, 0); }
+  22%      { transform: translate(3px, -2px); }
+  47%      { transform: translate(-2px, 3px); }
+  71%      { transform: translate(4px, 1px); }
+  88%      { transform: translate(-1px, -2px); }
+}
+
+.intro-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* ---- eyebrow / identity ---- */
+.intro-eyebrow {
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+/* ---- headline ---- */
+.intro-title {
+  margin-top: 0;                   /* override .pf-shead-title's 22px */
+  font-size: clamp(31px, 4vw, 47px);
+}
+
+.intro-title-accent { color: var(--cyan); }   /* solid cyan, like .about-accent / .contact-accent */
+
+/* ---- supporting paragraph ---- */
+.intro-lead {
+  margin-top: 24px;
+  max-width: 600px;
+  font-family: var(--font);
+  font-size: clamp(14px, 1.5vw, 15.5px);
+  line-height: 1.62;
+  color: var(--muted);
+  min-height: calc(3 * 1.62em);    /* EN and IT both reserve 3 lines on desktop */
+}
+
+/* ---- language selector · minimal, secondary utility control ----
+   Wired to the SAME language engine as the global bottom bar
+   (js/utility-bar.js): any [data-pf-lang] element is picked up by
+   its delegated click handler and kept in sync by syncBar(). No
+   separate translation logic lives here. */
+.intro-lang {
+  margin-top: 40px;               /* final element of the hero: CTA removed, gap rebalanced */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.intro-lang-btn {
+  margin: 0;
+  padding: 2px 1px;
+  background: transparent;
+  border: 0;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 0.18s;
+}
+
+.intro-lang-btn:hover { color: var(--text); }
+
+.intro-lang-btn.is-active {
+  color: var(--cyan);
+  text-shadow: 0 0 10px var(--cyan-glow, rgba(56, 189, 248, 0.4));
+}
+
+.intro-lang-btn:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+}
+
+.intro-lang-sep {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--dim);
+}
+
+/* ---- subtle on-load entrance — same fade-up vocabulary as the
+        rest of the site, staggered top-to-bottom ---- */
+@keyframes introRise {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.intro-inner > * {
+  animation: introRise 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.intro-eyebrow   { animation-delay: 0.05s; }
+.intro-title     { animation-delay: 0.13s; }
+.intro-lead      { animation-delay: 0.21s; }
+.intro-lang      { animation-delay: 0.29s; }
+
+/* ============================================================
+   RESPONSIVE — keep the centered composition at every width,
+   only the type / spacing scale down.
+   ============================================================ */
+
+@media (max-width: 1080px) {
+  /* smaller screens: the bright stars keep a tighter halo */
+  .intro-nodes i:nth-child(2),
+  .intro-nodes i:nth-child(5),
+  .intro-nodes i:nth-child(9) { --g-hi: 0 0 5px 1px rgba(110, 215, 255, 0.85), 0 0 16px 3px rgba(56, 189, 248, 0.2); }
+  /* fewer signals on smaller screens: outer-ring extras off */
+  .intro-nodes i:nth-child(6),
+  .intro-nodes i:nth-child(7),
+  .intro-nodes i:nth-child(9),
+  .intro-nodes i:nth-child(11),
+  .intro-nodes i:nth-child(12) { display: none; }
+
+  .intro { padding: 44px 24px 28px; }
+  .intro { padding-bottom: 98px; }  /* +70px breathing room */
+  .intro-eyebrow { margin-bottom: 24px; }
+  .intro-lead { margin-top: 22px; min-height: 0; }
+  .intro-br { display: none; }       /* IT desktop line breaks → natural wrap */
+  .intro-lang { margin-top: 34px; }
+}
+
+@media (max-width: 640px) {
+  .intro { padding: 30px 16px 22px; }
+  .intro { padding-bottom: 62px; }  /* +40px breathing room, proportionally smaller */
+  .intro-title { font-size: clamp(24px, 7vw, 33px); }
+  .intro-lead { font-size: 14px; }
+  .intro-lang { margin-top: 28px; }
+
+  /* lighter atmosphere on phones: static grid only, tighter fade, no nodes */
+  .intro-nodes { display: none; }
+  .intro::before {
+    mask-image: radial-gradient(ellipse 80% 55% at 50% 44%, black 10%, transparent 90%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 55% at 50% 44%, black 10%, transparent 90%);
+  }
+  .intro-lang-btn, .intro-lang-sep { font-size: 10.5px; letter-spacing: 0.16em; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-inner > * { animation: none; }
+  .intro-nodes, .intro-nodes i { animation: none; }
+}

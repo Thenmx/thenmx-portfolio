@@ -1,0 +1,415 @@
+/* ============================================================
+   CONTACT — 06 / the closing section of the homepage.
+   A direct-contact module (no form): an editorial left column +
+   a contact "system" on the right (Email card, LinkedIn card,
+   lower information panel), an empty right gutter column,
+   and a full-width closing row.
+
+   Shares the design language of the rest of the home
+   (css/hero.css vars): dark ground, cyan glow, glass, mono
+   labels, engineering grid, 100px pills. Reuses .glass and
+   .live-dot from hero.css rather than redefining them.
+
+   A reading section, not a live workflow: motion is a one-shot
+   entrance only (js/contact.js toggles .revealed via
+   IntersectionObserver, same pattern as cycle/showcase/
+   interfaces/about).
+   ============================================================ */
+
+.contact {
+  position: relative;
+  z-index: 1;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 112px 32px 120px;
+  overflow-x: clip;
+}
+
+.contact::before {
+  content: '';
+  position: absolute;
+  inset: 40px 0 40px;
+  background:
+    linear-gradient(rgba(125, 180, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(125, 180, 255, 0.03) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse 70% 70% at 50% 40%, black 20%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 40%, black 20%, transparent 100%);
+  pointer-events: none;
+}
+
+.contact-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.12fr) 128px;
+  column-gap: clamp(28px, 4.5vw, 60px);
+  align-items: stretch;
+}
+
+/* ============ ENTRANCE (one-shot, mirrors about.css) ============ */
+
+.contact-lead,
+.contact-system,
+.contact-close {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.contact.revealed .contact-lead      { opacity: 1; transform: none; }
+.contact.revealed .contact-system    { opacity: 1; transform: none; transition-delay: 0.1s; }
+.contact.revealed .contact-close     { opacity: 1; transform: none; transition-delay: 0.28s; }
+
+/* ============ LEFT · EDITORIAL COLUMN ============ */
+
+.contact-lead {
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--cyan);
+}
+
+.contact-rule {
+  width: 1px;
+  height: 26px;
+  margin: 18px 0 0 3px;
+  background: linear-gradient(var(--border-strong), transparent);
+}
+
+/* headline uses the shared macro-section scale (.pf-shead-title) —
+   identical to THE CYCLE / THE AI CASES / THE INTERFACES / ABOUT ME,
+   in both EN ("LET'S / CONNECT.") and IT ("PARLIAMONE."). Only the
+   rhythm inside the editorial column is tuned here. */
+.contact-headline {
+  margin: 8px 0 24px;
+}
+
+.contact-accent { color: var(--cyan); }
+
+.contact-intro {
+  max-width: 400px;
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--muted);
+}
+
+.contact-topics {
+  margin-top: 22px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+}
+
+/* ============ RIGHT · CONTACT SYSTEM ============ */
+
+.contact-system {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 22px 22px 20px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: rgba(140, 180, 255, 0.015);
+  color: var(--text);
+  text-decoration: none;
+  transition: border-color 0.22s, background 0.22s, box-shadow 0.22s;
+}
+
+.contact-card:hover {
+  border-color: var(--border-strong);
+  background: rgba(56, 189, 248, 0.045);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.34);
+}
+
+.contact-card:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+}
+
+.contact-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+}
+
+.contact-card-num  { color: var(--dim); }
+.contact-card-kind { color: var(--muted); }
+
+.contact-card-icon {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+  color: var(--cyan);
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  transition: background 0.22s, border-color 0.22s, box-shadow 0.22s;
+}
+
+.contact-card-dot {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 8px var(--cyan-glow);
+}
+
+.contact-card:hover .contact-card-icon {
+  background: rgba(56, 189, 248, 0.14);
+  border-color: rgba(56, 189, 248, 0.45);
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.16);
+}
+
+.contact-card-value {
+  font-family: var(--mono);
+  font-size: clamp(13.5px, 1.35vw, 17px);
+  letter-spacing: 0.01em;
+  color: var(--text);
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.contact-card-cta {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--cyan);
+}
+
+.contact-card-arrow {
+  flex-shrink: 0;
+  transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.contact-card:hover .contact-card-arrow { transform: translateX(4px); }
+
+/* ---- lower information panel ---- */
+
+.contact-panel {
+  margin-top: 2px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: clamp(20px, 3vw, 44px);
+  padding: clamp(22px, 3vw, 30px) clamp(22px, 3vw, 34px);
+}
+
+.contact-panel-col-focus {
+  border-left: 1px solid var(--border);
+  padding-left: clamp(20px, 3vw, 40px);
+}
+
+.contact-panel-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--cyan);
+}
+
+.contact-panel-label.is-lead::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 9px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 8px var(--cyan-glow);
+  vertical-align: middle;
+}
+
+.contact-panel-list {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.contact-panel-list li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.contact-panel-list li::before {
+  content: '\2192';
+  position: absolute;
+  left: 0;
+  color: var(--cyan);
+}
+
+.contact-panel-focus {
+  margin-top: 16px;
+  max-width: 260px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+/* ============ CLOSING ROW ============ */
+
+.contact-close {
+  grid-column: 1 / -1;
+  margin-top: clamp(52px, 8vw, 100px);
+}
+
+.contact-close-sep {
+  height: 1px;
+  width: 100%;
+  background: var(--border);
+}
+
+.contact-close-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 22px;
+}
+
+.contact-thanks {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+.contact-top {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.18s;
+}
+
+.contact-top:hover { color: var(--cyan); }
+
+.contact-top:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.contact-top svg { flex-shrink: 0; }
+
+/* ============ RESPONSIVE ============ */
+
+/* notebook — drop the gutter column, keep the two-column composition */
+@media (max-width: 1180px) {
+  .contact-inner {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.15fr);
+    column-gap: clamp(24px, 3.5vw, 44px);
+  }
+}
+
+@media (max-width: 1080px) {
+  .contact { padding: 84px 16px 96px; }
+}
+
+/* tablet / mobile — natural stacking */
+@media (max-width: 880px) {
+  .contact-inner { grid-template-columns: 1fr; }
+
+  .contact-lead   { grid-column: 1; }
+  .contact-system { grid-column: 1; margin-top: 40px; }
+  .contact-close  { grid-column: 1; }
+
+  .contact-cards { grid-template-columns: 1fr; }
+
+  .contact-panel { grid-template-columns: 1fr; gap: 24px; }
+  .contact-panel-col-focus {
+    border-left: 0;
+    border-top: 1px solid var(--border);
+    padding-left: 0;
+    padding-top: 22px;
+  }
+  .contact-panel-focus { max-width: none; }
+}
+
+@media (max-width: 560px) {
+  .contact { padding: 68px 16px 88px; }
+
+  .contact-headline { margin: 12px 0 20px; }
+
+  .contact-topics { font-size: 9.5px; letter-spacing: 0.1em; }
+
+  .contact-close-row { flex-direction: column; gap: 16px; }
+  .contact-top {
+    position: static;
+    transform: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .contact-card { padding: 20px 18px 18px; }
+}
+
+/* ============ REDUCED MOTION ============ */
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  .contact-lead,
+  .contact-system,
+  .contact-close {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .contact-card,
+  .contact-card-icon,
+  .contact-card-arrow,
+  .contact-top { transition: none !important; }
+}

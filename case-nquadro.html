@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en" data-pf-screen-scale>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NMX, NQUADRO · Case Study</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/topbar.css" />
+  <link rel="stylesheet" href="css/case.css" />
+  <link rel="stylesheet" href="css/case-nquadro.css" />
+  <link rel="stylesheet" href="css/utility-bar.css" />
+  <link rel="stylesheet" href="css/side-nav.css" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHX9JL5MT3"></script>
+  <script src="js/analytics.js"></script>
+</head>
+<body>
+
+  <!-- ============ TOPBAR ============ -->
+  <header class="cs-topbar" data-watch>
+    <span class="cs-signature">
+      <span class="cs-signature-full">NANDO MORI — PRODUCT DESIGNER — PORTFOLIO 2027</span>
+      <span class="cs-signature-short">NANDO MORI — PRODUCT DESIGNER</span>
+    </span>
+    <a class="cs-back" href="index.html#interfaces">
+      <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3L5 8l5 5"/></svg>
+      BACK TO PROJECTS
+    </a>
+  </header>
+
+  <div class="cs-shell">
+
+    <!-- ============ SECTION RAIL ============ -->
+    <aside class="cs-rail" aria-label="Page sections">
+      <a class="cs-rail-link active" href="#overview">01 / NQUADRO</a>
+      <a class="cs-rail-link" href="#context">02 / THE CONTEXT</a>
+      <a class="cs-rail-link" href="#evidence">03 / EVIDENCE &amp; INPUTS</a>
+      <a class="cs-rail-link" href="#decision">04 / DESIGN DECISION 01</a>
+      <a class="cs-rail-link" href="#wireframes">05 / WIREFRAMES TO UI</a>
+      <a class="cs-rail-link" href="#art-direction">06 / CATEGORY ART DIRECTION</a>
+      <a class="cs-rail-link" href="#final">07 / FINAL EXPERIENCE</a>
+      <a class="cs-rail-link" href="#proves">08 / WHAT IT PROVES</a>
+      <a class="cs-rail-link cs-rail-back" href="index.html#interfaces">← BACK TO PROJECTS</a>
+    </aside>
+
+    <main class="cs-main">
+
+      <!-- ============ 01 · HERO ============ -->
+      <section class="cs-section cs-hero" id="overview" data-watch>
+        <div class="cs-hero-grid">
+
+          <div class="cs-head">
+            <div class="cs-eyebrow">
+              <span class="live-dot"></span>
+              <span>01 / CLIENT PROJECT</span>
+            </div>
+            <h1 class="cs-hero-title">NQUADRO</h1>
+            <p class="nq-hero-statement">Reframing a complex catalog around product discovery.</p>
+            <p class="cs-hero-desc">
+              A B2B product catalog redesign focused on making a broad offering easier to
+              understand, explore and navigate through a clearer information architecture
+              and a visual-first discovery experience.
+            </p>
+
+            <div class="nq-tags">
+              <span class="nq-tag">B2B PRODUCT CATALOG</span>
+              <span class="nq-tag">UX/UI</span>
+              <span class="nq-tag">IA</span>
+              <span class="nq-tag">WIREFRAMES</span>
+              <span class="nq-tag">UI FUNDAMENTALS</span>
+            </div>
+
+            <div class="nq-facts">
+              <span class="nq-fact">REAL CLIENT</span>
+              <!-- provisional: edit the count in one place -->
+              <span class="nq-fact" data-nq-screens><b>15+</b> SCREENS</span>
+              <span class="nq-fact">DESKTOP + MOBILE</span>
+            </div>
+
+            <div class="nq-confid">
+              <span class="nq-confid-eyebrow">CLIENT PROJECT · PORTFOLIO RECONSTRUCTION</span>
+              <p class="nq-confid-text">Case study based on a real professional project. The identity, content and materials shown have been recreated and reworked specifically for this portfolio.</p>
+            </div>
+          </div>
+
+          <!-- main visual — reuses the NQUADRO hero slider from THE INTERFACES -->
+          <div class="nq-hero-visual cs-reveal">
+            <div class="nq-frame">
+              <div class="nq-frame-chrome">
+                <span class="nq-frame-dots"><i></i><i></i><i></i></span>
+                <span class="nq-frame-url">nquadro</span>
+              </div>
+              <div class="nq-slider" data-nq-slider>
+                <img class="nq-slide is-active" src="assets/ui/nquadro-slide-1.webp" srcset="assets/ui/nquadro-slide-1-800.webp 800w, assets/ui/nquadro-slide-1.webp 1440w" sizes="(max-width: 760px) 100vw, 1440px" width="1440" height="1000" fetchpriority="high" decoding="async" alt="NQUADRO, school category hero, homepage interface design" />
+                <!-- slides 2–3 are hydrated by js/case-nquadro.js once slide 1 has loaded -->
+                <img class="nq-slide" data-src="assets/ui/nquadro-slide-2.webp" data-srcset="assets/ui/nquadro-slide-2-800.webp 800w, assets/ui/nquadro-slide-2.webp 1440w" sizes="(max-width: 760px) 100vw, 1440px" width="1440" height="1000" decoding="async" alt="NQUADRO, office category hero, homepage interface design" />
+                <img class="nq-slide" data-src="assets/ui/nquadro-slide-3.webp" data-srcset="assets/ui/nquadro-slide-3-800.webp 800w, assets/ui/nquadro-slide-3.webp 1440w" sizes="(max-width: 760px) 100vw, 1440px" width="1440" height="1000" decoding="async" alt="NQUADRO, work category hero, homepage interface design" />
+              </div>
+              <div class="nq-frame-foot">
+                <span class="nq-frame-label">HOMEPAGE · CATEGORY HERO STATES</span>
+                <span class="nq-slider-dots" role="tablist" aria-label="NQUADRO hero variations">
+                  <button type="button" class="nq-sdot is-active" role="tab" aria-selected="true" aria-label="Show slide 1"></button>
+                  <button type="button" class="nq-sdot" role="tab" aria-selected="false" aria-label="Show slide 2"></button>
+                  <button type="button" class="nq-sdot" role="tab" aria-selected="false" aria-label="Show slide 3"></button>
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ============ 02 · THE CONTEXT ============ -->
+      <section class="cs-section" id="context" data-watch>
+        <div class="cs-head">
+          <div class="cs-eyebrow">
+            <span class="live-dot"></span>
+            <span>02 / THE CONTEXT</span>
+            <span class="eyebrow-sep">/</span>
+            <span class="eyebrow-dim">A LARGE OFFERING, HARD TO NAVIGATE</span>
+          </div>
+          <h2 class="cs-title">From a large offering<br />to a <span class="cs-title-grad">discovery problem</span>.</h2>
+        </div>
+
+        <div class="cs-reveal">
+          <div class="nq-copy">
+            <p>
+              The existing experience had to accommodate a broad catalog of products,
+              services and editorial content, but the digital structure made it difficult
+              to understand the offering and quickly reach the most relevant products.
+            </p>
+          </div>
+          <p class="nq-context-note">The problem wasn't quantity.<br /><span>It was discovery.</span></p>
+
+          <div class="nq-context-grid" style="margin-top: 32px;">
+            <figure class="nq-shot nq-shot-contain">
+              <img src="assets/ui/NQUADRO_SITO_PRECEDENTE.jpg" width="1440" height="1024" loading="lazy" decoding="async" alt="NQUADRO, previous website homepage, catalog and product listings" />
+              <figcaption>
+                <span>PREVIOUS WEBSITE</span>
+                <span>PRE-REDESIGN · DESKTOP</span>
+              </figcaption>
+            </figure>
+
+            <div class="nq-issues">
+              <div class="nq-issues-head">KEY ISSUES IDENTIFIED</div>
+              <div class="nq-issue">Fragmented navigation</div>
+              <div class="nq-issue">Low product discoverability</div>
+              <div class="nq-issue">Overlapping content and catalogs</div>
+              <div class="nq-issue">Unclear category structure</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 03 · EVIDENCE & INPUTS ============ -->
+      <section class="cs-section" id="evidence" data-watch>
+        <div class="cs-head">
+          <div class="cs-eyebrow">
+            <span class="live-dot"></span>
+            <span>03 / EVIDENCE &amp; INPUTS</span>
+            <span class="eyebrow-sep">/</span>
+            <span class="eyebrow-dim">WHAT SHAPED THE DESIGN HYPOTHESES</span>
+          </div>
+          <h2 class="cs-title">Design didn't start<br />from the <span class="cs-title-grad">interface</span>.</h2>
+          <p class="cs-sub">
+            The project started from an analysis of the existing experience. An external
+            UX audit, available behavioral data and the reorganization of the architecture
+            provided the inputs used to define the first design hypotheses and translate
+            them into wireframes.
+          </p>
+        </div>
+
+        <div class="cs-reveal">
+          <div class="nq-modules-3">
+            <article class="nq-module">
+              <div class="nq-module-top">
+                <span class="nq-module-num">01</span>
+              </div>
+              <h3>UX Audit</h3>
+              <div class="nq-copy">
+                <p>An external UX analysis highlighted issues in navigation, content hierarchy and access to product areas.</p>
+              </div>
+            </article>
+
+            <article class="nq-module">
+              <div class="nq-module-top">
+                <span class="nq-module-num">02</span>
+              </div>
+              <h3>Behavioral Evidence</h3>
+              <div class="nq-copy">
+                <p>Available data on the existing experience showed interactions concentrated heavily in the upper part of pages, providing further input for rethinking product discovery.</p>
+              </div>
+            </article>
+
+            <article class="nq-module">
+              <div class="nq-module-top">
+                <span class="nq-module-num">03</span>
+              </div>
+              <h3>Information Architecture</h3>
+              <div class="nq-copy">
+                <p>The insights gathered converged into a shared reorganization of content and user journeys, later translated at the page level through wireframes.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 04 · DESIGN DECISION 01 ============ -->
+      <section class="cs-section" id="decision" data-watch>
+        <div class="cs-head">
+          <div class="cs-eyebrow">
+            <span class="live-dot"></span>
+            <span>04 / DESIGN DECISION 01</span>
+            <span class="eyebrow-sep">/</span>
+            <span class="eyebrow-dim">STRUCTURE BEFORE SCREENS</span>
+          </div>
+          <h2 class="cs-title">Restructuring<br /><span class="cs-title-grad">product discovery</span>.</h2>
+          <p class="cs-sub">
+            The broad catalog structure made the offering difficult to interpret quickly.
+            Instead of simply reproducing the existing catalog structure, product discovery
+            was reorganized around macro-categories based on use and context.
+          </p>
+        </div>
+
+        <div class="cs-reveal">
+          <div class="nq-decision-grid">
+
+            <div class="nq-fromto">
+              <div class="nq-logic">
+                <div class="nq-logic-label">FROM / OLD LOGIC</div>
+                <ul class="nq-logic-old-list">
+                  <li>Catalogs</li>
+                  <li>Products</li>
+                  <li>Services</li>
+                  <li>Editorial content</li>
+                </ul>
+              </div>
+              <div class="nq-fromto-arrow" aria-hidden="true">↓</div>
+              <div class="nq-logic is-new">
+                <div class="nq-logic-label">TO / NEW LOGIC</div>
+                <div class="nq-cat-list">
+                  <div class="nq-cat"><b>SCHOOL</b><span>Products for education</span></div>
+                  <div class="nq-cat"><b>OFFICE</b><span>Products for workspace</span></div>
+                  <div class="nq-cat"><b>WORK</b><span>Products for professional contexts</span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="nq-ia">
+              <div class="nq-ia-title">INFORMATION ARCHITECTURE</div>
+              <div class="nq-ia-flow">
+                <div class="nq-ia-node">HOME</div>
+                <div class="nq-ia-line"></div>
+                <div class="nq-ia-fork" aria-hidden="true"></div>
+                <div class="nq-ia-branch">
+                  <div class="nq-ia-node is-cat">SCHOOL</div>
+                  <div class="nq-ia-node is-cat">OFFICE</div>
+                  <div class="nq-ia-node is-cat">WORK</div>
+                </div>
+                <div class="nq-ia-line"></div>
+                <div class="nq-ia-node">CATEGORIES<small>Use-oriented grouping</small></div>
+                <div class="nq-ia-line"></div>
+                <div class="nq-ia-node">PRODUCT DETAIL</div>
+              </div>
+            </div>
+
+          </div>
+
+          <p class="nq-art-foot" style="margin-top: 22px;">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.5v13M1.5 8h13"/></svg>
+            Explanatory portfolio visualization of the proposed IA, not an original project artifact.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============ 05 · FROM WIREFRAMES TO UI ============ -->
+      <section class="cs-section" id="wireframes" data-watch>
+        <div class="cs-head">
+          <div class="cs-eyebrow">
+            <span class="live-dot"></span>
+            <span>05 / FROM WIREFRAMES TO UI</span>
+            <span class="eyebrow-sep">/</span>
+            <span class="eyebrow-dim">STRUCTURE, REFINED, THEN STYLED</span>
+          </div>
+          <h2 class="cs-title">Shaping the experience<br /><span class="cs-title-grad">step by step</span>.</h2>
+          <p class="cs-sub">
+            The structure was explored through high-fidelity wireframes and refined through
+            stakeholder discussions before being translated into a consistent visual system.
+          </p>
+        </div>
+
+        <div class="cs-reveal">
+
+          <div class="nq-kicker">WIREFRAMES / SELECTED SCREENS</div>
+          <div class="nq-wf-row">
+            <figure class="nq-shot nq-wf-item">
+              <img class="nq-zoomable" src="assets/ui/NQUADRO_WIREFRAME_HOME.png" width="1440" height="1024" loading="lazy" decoding="async" alt="NQUADRO, homepage wireframe" />
+              <figcaption><span>01 / HOME</span></figcaption>
+            </figure>
+            <figure class="nq-shot nq-wf-item">
+              <img class="nq-zoomable" src="assets/ui/NQUADRO_WIREFRAME_CATEGORIA.png" width="1440" height="1024" loading="lazy" decoding="async" alt="NQUADRO, category page wireframe" />
+              <figcaption><span>02 / CATEGORIA</span></figcaption>
+            </figure>
+            <figure class="nq-shot nq-wf-item">
+              <img class="nq-zoomable" src="assets/ui/NQUADRO_WIREFRAME_PRODOTTO.png" width="1440" height="1024" loading="lazy" decoding="async" alt="NQUADRO, product page wireframe" />
+              <figcaption><span>03 / PRODOTTO</span></figcaption>
+            </figure>
+          </div>
+
+          <div class="nq-ds nq-ds-h">
+            <div class="nq-ds-head">UI FOUNDATION / VISUAL RULES</div>
+
+            <div class="nq-ds-strip">
+              <div class="nq-ds-row nq-ds-row-type">
+                <span class="nq-ds-label">TYPOGRAPHY / BARLOW</span>
+                <div class="nq-ds-scale">
+                  <span class="nq-ds-step s-h1"><b>Aa</b><i>H1 · 64px</i></span>
+                  <span class="nq-ds-step s-h2"><b>Aa</b><i>H2 · 36px</i></span>
+                  <span class="nq-ds-step s-h3"><b>Aa</b><i>H3 · 22px</i></span>
+                  <span class="nq-ds-step s-body"><b>Aa</b><i>BODY · 18px</i></span>
+                </div>
+              </div>
+
+              <div class="nq-ds-row">
+                <span class="nq-ds-label">CORE UI PALETTE</span>
+                <div class="nq-ds-swatches">
+                  <span class="nq-sw lime"></span>
+                  <span class="nq-sw ink"></span>
+                  <span class="nq-sw paper"></span>
+                  <span class="nq-sw grey"></span>
+                </div>
+              </div>
+
+              <div class="nq-ds-row">
+                <span class="nq-ds-label">BUTTONS</span>
+                <div class="nq-ds-controls">
+                  <span class="nq-ds-btn">PRIMARY</span>
+                  <span class="nq-ds-btn ghost">SECONDARY</span>
+                </div>
+              </div>
+
+              <div class="nq-ds-row">
+                <span class="nq-ds-label">INPUTS</span>
+                <div class="nq-ds-controls">
+                  <span class="nq-ds-input">Search field</span>
+                </div>
+              </div>
+
+              <div class="nq-ds-row">
+                <span class="nq-ds-label">ICONS</span>
+                <div class="nq-ds-icons">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="5"/><path d="M11 11l3.5 3.5"/></svg>
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="10" rx="1.5"/><path d="M2 6h12"/></svg>
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l5-3 5 3v6l-5 3-5-3z"/></svg>
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h12M9 4l4 4-4 4"/></svg>
+                </div>
+              </div>
+
+              <div class="nq-ds-row">
+                <span class="nq-ds-label">CORE UI COMPONENTS</span>
+                <div class="nq-ds-controls">
+                  <span class="nq-tag">CARD</span>
+                  <span class="nq-tag">NAV</span>
+                  <span class="nq-tag">FILTER</span>
+                  <span class="nq-tag">PRICE TAG</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ---- stakeholder refinement process step ---- -->
+          <div class="nq-refine">
+            <div class="nq-refine-grid">
+              <div>
+                <div class="nq-kicker">STAKEHOLDER REFINEMENT</div>
+                <h3>IA refinement with client stakeholders</h3>
+                <p>
+                  The information architecture and key page structures were refined with
+                  client stakeholders, using their knowledge of the product offering and
+                  business context to improve the proposed structure.
+                </p>
+              </div>
+              <div class="nq-process">
+                <div class="nq-process-step">WIREFRAMES</div>
+                <div class="nq-process-arrow" aria-hidden="true">↓</div>
+                <div class="nq-process-step is-focus"><b>›</b> STAKEHOLDER REFINEMENT</div>
+                <div class="nq-process-arrow" aria-hidden="true">↓</div>
+                <div class="nq-process-step">DESIGN SYSTEM</div>
+                <div class="nq-process-arrow" aria-hidden="true">↓</div>
+                <div class="nq-process-step">FINAL UI</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 06 · CATEGORY ART DIRECTION ============ -->
+      <section class="cs-section" id="art-direction" data-watch>
+        <div class="cs-head">
+          <div class="cs-eyebrow">
+            <span class="live-dot"></span>
+            <span>06 / CATEGORY ART DIRECTION</span>
+            <span class="eyebrow-sep">/</span>
+            <span class="eyebrow-dim">VISUAL IDENTITY &amp; PRODUCT DISCOVERY</span>
+          </div>
+          <h2 class="cs-title">One visual language.<br /><span class="cs-title-grad">Different commercial contexts</span>.</h2>
+          <p class="cs-sub">
+            The catalog's three core areas, School, Office and Work, needed an identity that
+            felt immediately recognizable without fragmenting the brand's visual language.
+          </p>
+          <p class="cs-sub">
+            I built a coherent hero system, differentiating each category through distinct
+            subjects and compositions. Product modules embedded in the imagery connect the
+            scenic storytelling to the catalog, previewing the offering and creating fast
+            entry points into the products.
+          </p>
+        </div>
+
+        <div class="cs-reveal">
+          <div class="nq-art-grid">
+            <figure class="nq-art-card">
+              <img class="nq-zoomable" src="assets/ui/nquadro-slide-1.webp" srcset="assets/ui/nquadro-slide-1-800.webp 800w, assets/ui/nquadro-slide-1.webp 1440w" sizes="(max-width: 760px) 100vw, 1440px" width="1440" height="1000" loading="lazy" decoding="async" alt="NQUADRO, AI-generated school category hero composition" />
+              <figcaption><span class="nq-art-cat">SCHOOL</span><span class="nq-art-tag">CATEGORY HERO</span></figcaption>
+            </figure>
+            <figure class="nq-art-card">
+              <img class="nq-zoomable" src="assets/ui/nquadro-slide-2.webp" srcset="assets/ui/nquadro-slide-2-800.webp 800w, assets/ui/nquadro-slide-2.webp 1440w" sizes="(max-width: 760px) 100vw, 1440px" width="1440" height="1000" loading="lazy" decoding="async" alt="NQUADRO, AI-generated office category hero composition" />
+              <figcaption><span class="nq-art-cat">OFFICE</span><span class="nq-art-tag">CATEGORY HERO</span></figcaption>
+            </figure>
+            <figure class="nq-art-card">
+              <img class="nq-zoomable" src="assets/ui/nquadro-slide-3.webp" srcset="assets/ui/nquadro-slide-3-800.webp 800w, assets/ui/nquadro-slide-3.webp 1440w" sizes="(max-width: 760px) 100vw, 1440px" width="1440" height="1000" loading="lazy" decoding="async" alt="NQUADRO, AI-generated work category hero composition" />
+              <figcaption><span class="nq-art-cat">WORK</span><span class="nq-art-tag">CATEGORY HERO</span></figcaption>
+            </figure>
+          </div>
+          <p class="nq-art-foot">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.5 3.5L13 4.5"/></svg>
+            AI-assisted imagery · Interface design and composition in Figma
+          </p>
+        </div>
+      </section>
+
+      <!-- ============ 07 · FINAL EXPERIENCE ============ -->
+      <section class="cs-section" id="final" data-watch>
+        <div class="cs-head">
+          <div class="cs-eyebrow">
+            <span class="live-dot"></span>
+            <span>07 / FINAL EXPERIENCE</span>
+            <span class="eyebrow-sep">/</span>
+            <span class="eyebrow-dim">DESKTOP + MOBILE</span>
+          </div>
+          <h2 class="cs-title">A complete, coherent<br /><span class="cs-title-grad">digital product</span>.</h2>
+          <p class="cs-sub">
+            The final interface brings together a clearer information architecture, a
+            consistent visual system and a product-focused discovery experience across
+            desktop and mobile.
+          </p>
+        </div>
+
+        <div class="cs-reveal">
+
+          <figure class="nq-shot nq-select-preview">
+            <div class="nq-select-preview-stage">
+              <img class="nq-zoomable" id="nqSelectImg" src="assets/ui/NQUADRO_PRODOTTO.png" width="1440" height="900" loading="lazy" decoding="async" alt="NQUADRO, product page, final interface design" />
+            </div>
+            <figcaption>
+              <span id="nqSelectLabel">01 · PRODUCT</span>
+              <span>FINAL UI</span>
+            </figcaption>
+          </figure>
+
+          <div class="nq-select-thumbs" role="group" aria-label="Select NQUADRO screen to preview">
+            <button type="button" class="nq-select-thumb is-selected"
+                    data-nq-src="assets/ui/NQUADRO_PRODOTTO.png"
+                    data-nq-alt="NQUADRO, product page, final interface design"
+                    data-nq-label="01 · PRODUCT"
+                    aria-pressed="true" aria-label="Show NQUADRO product page">
+              <span class="nq-select-thumb-frame"><img src="assets/ui/NQUADRO_PRODOTTO.png" width="1440" height="900" loading="lazy" decoding="async" alt="" /></span>
+              <span class="nq-select-thumb-label">01 / PRODUCT</span>
+            </button>
+
+            <button type="button" class="nq-select-thumb"
+                    data-nq-src="assets/ui/NQUADRO_CATEGORIA.png"
+                    data-nq-alt="NQUADRO, category page, final interface design"
+                    data-nq-label="02 · CATEGORY"
+                    aria-pressed="false" aria-label="Show NQUADRO category page">
+              <span class="nq-select-thumb-frame"><img src="assets/ui/NQUADRO_CATEGORIA.png" width="1440" height="900" loading="lazy" decoding="async" alt="" /></span>
+              <span class="nq-select-thumb-label">02 / CATEGORY</span>
+            </button>
+
+            <button type="button" class="nq-select-thumb is-mobile"
+                    data-nq-src="assets/ui/NQUADRO_HOME MOBILE.png"
+                    data-nq-alt="NQUADRO, mobile homepage, final interface design"
+                    data-nq-label="03 · MOBILE"
+                    aria-pressed="false" aria-label="Show NQUADRO mobile interface">
+              <span class="nq-select-thumb-frame"><img src="assets/ui/NQUADRO_HOME MOBILE.png" width="393" height="900" loading="lazy" decoding="async" alt="" /></span>
+              <span class="nq-select-thumb-label">03 / MOBILE</span>
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ============ 08 · WHAT THIS PROJECT PROVES ============ -->
+      <section class="cs-section" id="proves" data-watch>
+        <div class="cs-head">
+          <div class="cs-eyebrow">
+            <span class="live-dot"></span>
+            <span>08 / WHAT THIS PROJECT PROVES</span>
+          </div>
+          <h2 class="cs-title">Not just a <span class="cs-title-grad">redesign</span>.</h2>
+          <p class="cs-sub">
+            A real client project shaped by existing-product constraints, external inputs,
+            stakeholder knowledge and design decisions translated into a complete digital
+            experience.
+          </p>
+        </div>
+
+        <div class="cs-reveal">
+          <div class="nq-proves-grid">
+            <div class="nq-proves">
+              <span class="nq-proves-num">01</span>
+              <b>UX Inputs</b>
+              <span>External audit and analysis</span>
+            </div>
+            <div class="nq-proves">
+              <span class="nq-proves-num">02</span>
+              <b>Information Architecture</b>
+              <span>Use-oriented structure</span>
+            </div>
+            <div class="nq-proves">
+              <span class="nq-proves-num">03</span>
+              <b>Stakeholder Refinement</b>
+              <span>Business-aligned decisions</span>
+            </div>
+            <div class="nq-proves">
+              <span class="nq-proves-num">04</span>
+              <b>Design System</b>
+              <span>Consistent and scalable UI</span>
+            </div>
+            <div class="nq-proves">
+              <span class="nq-proves-num">05</span>
+              <b>Final Interface</b>
+              <span>A complete responsive experience</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ NEXT / PREVIOUS PROJECT ============ -->
+      <nav class="nq-nav" aria-label="Project navigation">
+        <a class="nq-nav-card" href="index.html#interfaces">
+          <span class="nq-nav-kind">
+            <svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3L5 8l5 5"/></svg>
+            PREVIOUS PROJECT
+          </span>
+          <span class="nq-nav-name">ALL PROJECTS</span>
+        </a>
+        <a class="nq-nav-card is-next" href="case-elementa.html">
+          <span class="nq-nav-kind">
+            NEXT PROJECT
+            <svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3l5 5-5 5"/></svg>
+          </span>
+          <span class="nq-nav-name">ELEMENTA</span>
+        </a>
+      </nav>
+
+      <footer class="cs-footer">
+        <span>NMX © 2026</span>
+        <span>CLIENT PROJECT · NQUADRO</span>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="js/case.js"></script>
+  <script src="js/case-nquadro.js"></script>
+  <script src="js/i18n-dict.js"></script>
+  <script src="js/utility-bar.js"></script>
+  <script src="js/side-nav.js"></script>
+</body>
+</html>

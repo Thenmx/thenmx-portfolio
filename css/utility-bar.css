@@ -1,0 +1,369 @@
+/* ============================================================
+   GLOBAL BOTTOM UTILITY BAR  ·  the "anti-header"
+   Shared across every portfolio page. Depends only on tokens
+   from css/hero.css (--mono, --cyan, --muted, --dim, --border,
+   --text, --bg), so it can be dropped in right after hero.css.
+
+   Adds three things and nothing else:
+   1. .pf-ubar        slim fixed bar at the bottom of the viewport
+   2. left group      controlled content scale  [ − 100% + ]
+   3. right group     instant language switch   [ EN / IT ]
+
+   Content scale is applied with `zoom` on the root element — the
+   browser's own, layout-safe scaling path: sticky / fixed children
+   keep working, the document height stays correct and the layout
+   reflows to the scaled width (so a mild scale-up never adds a
+   horizontal scrollbar). The bar counter-scales itself so its own
+   UI always renders at 100%.
+   ============================================================ */
+
+:root {
+  --pf-ubar-h: 42px;
+  --pf-scale: 1;
+}
+
+/* controlled content scale — 0.9 / 1 / 1.1, set by the script */
+:root { zoom: var(--pf-scale, 1); }
+
+/* clip the few decorative elements that sit a hair outside the grid
+   (timeline dots, cycle flow line) so scaling up never shows a
+   horizontal scrollbar — matches body{overflow-x:hidden} already
+   in css/hero.css */
+html { overflow-x: hidden; }
+
+/* keep the last section clear of the fixed bar */
+body { padding-bottom: calc(58px + env(safe-area-inset-bottom, 0px)); }
+
+/* ============ THE BAR ============ */
+
+.pf-ubar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9000;
+  /* cancel the root zoom so the bar UI is always at 100% scale */
+  zoom: calc(1 / var(--pf-scale, 1));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  box-sizing: border-box;
+  min-height: calc(var(--pf-ubar-h) + env(safe-area-inset-bottom, 0px));
+  padding: 0 clamp(12px, 4vw, 28px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  background: rgba(10, 14, 21, 0.9);
+  -webkit-backdrop-filter: blur(12px) saturate(1.2);
+  backdrop-filter: blur(12px) saturate(1.2);
+  border-top: 1px solid var(--border, rgba(125, 180, 255, 0.13));
+  font-family: var(--mono, 'JetBrains Mono', monospace);
+  color: var(--muted, #8b98ac);
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.pf-ubar-group {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.pf-ubar-group-label {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  color: var(--dim, #5b6778);
+  margin-right: 8px;
+  text-transform: uppercase;
+}
+
+/* ---- shared control base ---- */
+.pf-ubar-btn {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+  padding: 0;
+  width: 26px;
+  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  color: var(--muted, #8b98ac);
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.18s, border-color 0.18s, background 0.18s;
+}
+
+.pf-ubar-btn:hover:not([disabled]) {
+  color: var(--cyan, #38bdf8);
+  border-color: var(--border-strong, rgba(125, 180, 255, 0.28));
+  background: rgba(56, 189, 248, 0.06);
+}
+
+.pf-ubar-btn:active:not([disabled]) {
+  background: rgba(56, 189, 248, 0.12);
+}
+
+.pf-ubar-btn[disabled] {
+  opacity: 0.28;
+  cursor: default;
+}
+
+.pf-ubar-btn svg {
+  width: 12px;
+  height: 12px;
+  display: block;
+}
+
+.pf-ubar-value {
+  min-width: 44px;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--text, #e9eef7);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---- language switch ---- */
+.pf-ubar-lang-wrap {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.pf-ubar-lang {
+  margin: 0;
+  padding: 6px 5px;
+  background: transparent;
+  border: 0;
+  border-radius: 5px;
+  color: var(--dim, #5b6778);
+  font-family: inherit;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  cursor: pointer;
+  transition: color 0.18s;
+}
+
+.pf-ubar-lang:hover { color: var(--muted, #8b98ac); }
+
+.pf-ubar-lang.is-active {
+  color: var(--cyan, #38bdf8);
+  text-shadow: 0 0 12px rgba(56, 189, 248, 0.45);
+}
+
+.pf-ubar-lang-sep {
+  color: var(--dim, #5b6778);
+  font-size: 10px;
+}
+
+/* ---- privacy / analytics preferences (centre, deliberately quiet) ---- */
+.pf-ubar-privacy {
+  margin: 0;
+  padding: 6px 4px;
+  background: transparent;
+  border: 0;
+  border-radius: 5px;
+  color: var(--dim, #5b6778);
+  font-family: inherit;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.18s;
+}
+
+.pf-ubar-privacy:hover { color: var(--muted, #8b98ac); }
+
+/* ---- keyboard focus ---- */
+.pf-ubar-privacy:focus-visible,
+.pf-ubar-btn:focus-visible,
+.pf-ubar-lang:focus-visible {
+  outline: 2px solid var(--cyan, #38bdf8);
+  outline-offset: 2px;
+}
+
+/* ============ BACK TO TOP ============
+   Suspended above the language switch, right edge aligned with
+   the bar's right padding. Counter-zoomed like the bar. */
+.pf-totop {
+  position: fixed;
+  z-index: 9000;
+  zoom: calc(1 / var(--pf-scale, 1));
+  right: clamp(12px, 4vw, 28px);
+  bottom: calc(var(--pf-ubar-h) + env(safe-area-inset-bottom, 0px) + 14px);
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 14, 21, 0.9);
+  -webkit-backdrop-filter: blur(12px) saturate(1.2);
+  backdrop-filter: blur(12px) saturate(1.2);
+  border: 1px solid rgba(125, 180, 255, 0.15);
+  border-radius: 8px;
+  color: var(--muted, #8b98ac);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity 0.25s, transform 0.25s, visibility 0.25s, color 0.18s, border-color 0.18s, background 0.18s;
+}
+.pf-totop.is-visible { opacity: 1; visibility: visible; transform: none; }
+.pf-totop svg { width: 13px; height: 13px; display: block; }
+.pf-totop:hover {
+  color: var(--cyan, #38bdf8);
+  border-color: var(--border-strong, rgba(125, 180, 255, 0.28));
+  background: rgba(14, 22, 32, 0.95);
+}
+.pf-totop:focus-visible {
+  outline: 2px solid var(--cyan, #38bdf8);
+  outline-offset: 2px;
+}
+
+/* ============ ANALYTICS CONSENT ============
+   Built by js/analytics.js. Floats above the bar, bottom-left, so
+   the back-to-top arrow (bottom-right) stays reachable. Counter-
+   zoomed like the bar. Non-blocking: no backdrop, no focus trap.
+   Both actions share one style — equal prominence by design. */
+.pf-consent {
+  position: fixed;
+  z-index: 9000;
+  zoom: calc(1 / var(--pf-scale, 1));
+  left: clamp(12px, 4vw, 28px);
+  bottom: calc(var(--pf-ubar-h) + env(safe-area-inset-bottom, 0px) + 14px);
+  box-sizing: border-box;
+  width: 400px;
+  max-width: calc(100vw - 2 * clamp(12px, 4vw, 28px) - 46px);
+  padding: 14px 16px 16px;
+  background: rgba(8, 11, 17, 0.94);
+  -webkit-backdrop-filter: blur(12px) saturate(1.2);
+  backdrop-filter: blur(12px) saturate(1.2);
+  border: 1px solid var(--border, rgba(125, 180, 255, 0.13));
+  border-radius: 10px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+  font-family: var(--mono, 'JetBrains Mono', monospace);
+  color: var(--muted, #8b98ac);
+}
+.pf-consent[hidden] { display: none; }
+
+.pf-consent-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.pf-consent-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--cyan, #38bdf8);
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
+}
+.pf-consent-title {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  color: var(--cyan, #38bdf8);
+}
+.pf-consent-text {
+  margin: 0 0 14px;
+  font-family: var(--font, 'Inter', system-ui, sans-serif);
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--muted, #8b98ac);
+}
+
+.pf-consent-actions {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 8px;
+}
+.pf-consent-btn {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+  padding: 9px 10px;
+  background: rgba(140, 180, 255, 0.04);
+  border: 1px solid var(--border-strong, rgba(125, 180, 255, 0.28));
+  border-radius: 7px;
+  color: var(--text, #e9eef7);
+  font-family: inherit;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.18s, border-color 0.18s, background 0.18s;
+}
+.pf-consent-btn:hover {
+  color: var(--cyan, #38bdf8);
+  border-color: rgba(56, 189, 248, 0.45);
+  background: rgba(56, 189, 248, 0.06);
+}
+.pf-consent-btn:focus-visible {
+  outline: 2px solid var(--cyan, #38bdf8);
+  outline-offset: 2px;
+}
+
+/* ============ STATIC TEXT CARET ============
+   Static interface text never shows a blinking caret when clicked
+   (text stays selectable/copyable); real editable fields keep it. */
+body { caret-color: transparent; }
+input,
+textarea,
+select,
+[contenteditable]:not([contenteditable="false"]) { caret-color: auto; }
+
+/* ============ RESPONSIVE ============ */
+
+@media (max-width: 560px) {
+  :root { --pf-ubar-h: 40px; }
+
+  .pf-ubar {
+    gap: 8px;
+    padding: 0 10px;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  /* keep both groups, just tighten them — never hide a control */
+  .pf-ubar-group-label { display: none; }
+  .pf-ubar-value { min-width: 40px; }
+  .pf-ubar-btn { width: 30px; height: 30px; }
+  .pf-ubar-lang { padding: 8px 5px; }
+  .pf-totop { right: 10px; bottom: calc(var(--pf-ubar-h) + env(safe-area-inset-bottom, 0px) + 12px); }
+
+  .pf-ubar-privacy { letter-spacing: 0.1em; padding: 8px 2px; }
+
+  /* leave the back-to-top arrow's column (10px + 32px + gap) free */
+  .pf-consent {
+    left: 10px;
+    bottom: calc(var(--pf-ubar-h) + env(safe-area-inset-bottom, 0px) + 12px);
+    width: auto;
+    right: 52px;
+    max-width: none;
+    padding: 12px 13px 13px;
+  }
+  .pf-consent-text { font-size: 12px; margin-bottom: 12px; }
+  .pf-consent-btn { padding: 10px 6px; font-size: 9.5px; letter-spacing: 0.1em; white-space: normal; }
+}
+
+@media (max-width: 360px) {
+  .pf-ubar-privacy { letter-spacing: 0.02em; }
+}
+
+/* ============ REDUCED MOTION ============ */
+
+@media (prefers-reduced-motion: reduce) {
+  .pf-ubar-btn,
+  .pf-ubar-lang,
+  .pf-ubar-privacy,
+  .pf-consent-btn,
+  .pf-totop { transition: none; }
+}

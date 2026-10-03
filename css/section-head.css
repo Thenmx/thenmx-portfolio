@@ -1,0 +1,47 @@
+/* ============================================================
+   SHARED MACRO-SECTION HEADING
+   The recurring "eyebrow -> large headline" rhythm that opens the
+   second half of the homepage.
+
+   THE CYCLE, THE AI CASES and THE INTERFACES predate this file and
+   already carry byte-identical local rules (.cycle-title / .sc-title
+   / .ui-title, and their -grad + eyebrow variants). ABOUT ME and
+   CONTACT adopt these shared classes so all five section titles are
+   locked to one scale / line-height / spacing and stay in sync.
+
+   Depends only on tokens from css/hero.css (--mono, --cyan, --text,
+   --muted, --dim). Load right after hero.css.
+   ============================================================ */
+
+.pf-shead-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--cyan);
+}
+
+.pf-shead-eyebrow .eyebrow-sep { color: var(--dim); }
+.pf-shead-eyebrow .eyebrow-dim { color: var(--muted); letter-spacing: 0.14em; }
+
+.pf-shead-title {
+  margin-top: 22px;
+  font-size: clamp(30px, 4vw, 46px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+  color: var(--text);
+}
+
+/* gradient accent word — identical to .ui-title-grad / .sc-title-grad
+   / .cycle-title-grad. ABOUT ME and CONTACT keep their own solid-cyan
+   accent spans (.about-accent / .contact-accent) by design, so this
+   is here only to complete the shared vocabulary. */
+.pf-shead-title-grad {
+  background: linear-gradient(90deg, #7dd3fc, #38bdf8, #22d3ee);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

@@ -1,0 +1,889 @@
+/* ============================================================
+   CASE STUDY — ELEMENTA  ·  B2B SaaS PRODUCT JOURNEY
+   Client project detail page. Loads AFTER css/hero.css +
+   css/case.css + css/case-nquadro.css and only adds
+   ELEMENTA-specific components (df-*).
+
+   Every token, the page shell, rail, section scaffold, buttons,
+   footer, reveal rhythm, the placeholder system (.nq-ph*), the
+   browser frame (.nq-frame*), the final-experience shots
+   (.nq-shot*), the project-nav cards (.nq-nav*), the capability
+   grid (.nq-proves*) and the shared primitives (.nq-kicker,
+   .nq-copy, .nq-tag, .nq-facts, .nq-context-note, .nq-modules-3 /
+   .nq-module) are inherited unchanged so ELEMENTA and NQUADRO stay
+   one visual system.
+
+   Accent policy:
+   - var(--cyan) → the portfolio's own accent: section eyebrows,
+                   diagrams, connectors, flow lines, active nodes.
+   - Elementa's product blue lives ONLY inside the real screenshots
+     and UI previews — it is never applied to page chrome. There is
+     no project-specific accent token on this page (NQUADRO's lime
+     stays with NQUADRO).
+
+   Note: this file was formerly css/case-docuflow.css. The class
+   prefix stays "df-" (an internal artifact, not a visible string)
+   so no markup needed churn beyond the file rename.
+   ============================================================ */
+
+/* ELEMENTA leans more SYSTEM / FLOW than NQUADRO — a few extra
+   diagram primitives, no new colour language. */
+
+/* ---- page-scoped overrides of NQUADRO-tinted primitives, so the
+   reused .nq-* components carry the portfolio cyan here instead of
+   the NQUADRO lime (which stays with the NQUADRO project) ---- */
+.df-page .nq-hero-visual::after {
+  background: radial-gradient(ellipse 60% 100% at 50% 0%, rgba(56, 189, 248, 0.12), transparent 70%);
+}
+
+/* single-image hero frame (NQUADRO uses a 3-state slider here).
+   1440/900 matches the real ELEMENTA screenshots exactly — no crop. */
+.df-page .nq-frame > .df-frame-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1440 / 900;
+  object-fit: cover;
+  object-position: center top;
+  background: #06090f;
+}
+
+/* ============================================================
+   SHARED FLOW PRIMITIVES  ·  used by the journey, the signal
+   chain, the subscription flow and the state flow
+   ============================================================ */
+.df-rail-note { /* small caption under a diagram */
+  margin-top: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  line-height: 1.7;
+  color: var(--dim);
+}
+.df-rail-note svg { width: 13px; height: 13px; color: var(--cyan); flex-shrink: 0; margin-top: 1px; }
+
+/* connector line + arrowhead, vertical */
+.df-conn {
+  width: 1px;
+  height: 26px;
+  margin: 4px auto;
+  background: linear-gradient(rgba(56, 189, 248, 0.55), rgba(56, 189, 248, 0.12));
+}
+.df-conn.is-short { height: 16px; }
+
+/* small inline directional arrow, reused between asset pairings
+   (subscription access → payment, end-to-end journey screens) */
+.df-plan-arrow { color: rgba(56, 189, 248, 0.6); font-size: 15px; flex-shrink: 0; }
+
+/* ============================================================
+   IMAGE LIGHTBOX  ·  one shared component, reused by every real
+   UI / wireframe screenshot on the page (img.df-zoomable, wired
+   in js/case-elementa.js). Wireframes stay their normal compact
+   size in-flow — this only offers a closer look on demand.
+   ============================================================ */
+img.df-zoomable {
+  cursor: zoom-in;
+  transition: filter 0.2s ease;
+}
+img.df-zoomable:hover,
+img.df-zoomable:focus-visible {
+  filter: brightness(1.05);
+}
+img.df-zoomable:focus-visible {
+  outline: 1px solid rgba(56, 189, 248, 0.55);
+  outline-offset: 2px;
+}
+
+html.df-scroll-lock,
+body.df-scroll-lock {
+  overflow: hidden;
+}
+
+.df-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+  background: rgba(6, 9, 15, 0.9);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease;
+}
+.df-lightbox.is-open { opacity: 1; visibility: visible; }
+.df-lightbox-img {
+  display: block;
+  max-width: 92vw;
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+}
+.df-lightbox-close {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  background: rgba(13, 18, 28, 0.85);
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+.df-lightbox-close:hover {
+  color: var(--cyan);
+  border-color: rgba(56, 189, 248, 0.45);
+  background: rgba(56, 189, 248, 0.1);
+}
+
+/* ============================================================
+   DESIGN RATIONALE  ·  compact, restrained "why" note attached to
+   a UI presentation (used after 08 Home Redesign, 09 Product Page,
+   10 Subscription Flow) — a left accent + small mono label, not a
+   card, so it reads as reasoning rather than a generic caption.
+   ============================================================ */
+.df-rationale {
+  margin-top: 22px;
+  padding-left: 18px;
+  max-width: 620px;
+  border-left: 2px solid rgba(56, 189, 248, 0.4);
+}
+.df-rationale-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: var(--cyan);
+  margin-bottom: 8px;
+}
+.df-rationale p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+/* ============================================================
+   03 · THE PROBLEM  ·  evidence + design observations
+   ============================================================ */
+.df-existing-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  gap: 20px;
+  align-items: stretch;
+  margin-top: 30px;
+}
+
+.df-obs {
+  display: flex;
+  flex-direction: column;
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: linear-gradient(160deg, rgba(140, 180, 255, 0.03), rgba(140, 180, 255, 0.006));
+}
+.df-obs-head {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  color: var(--cyan);
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(125, 180, 255, 0.1);
+}
+.df-obs-item {
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(125, 180, 255, 0.07);
+}
+.df-obs-item:last-child { border-bottom: 0; }
+.df-obs-item b {
+  display: block;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.df-obs-item span {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+/* plain variant: a single sentence per row, no bold label — used
+   for the Problem bullets and the IA "why this structure works"
+   list, where the copy is already one short, complete clause */
+.df-obs-item.is-plain {
+  position: relative;
+  padding-left: 16px;
+}
+.df-obs-item.is-plain::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 20px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(56, 189, 248, 0.55);
+}
+.df-obs-item.is-plain span { color: var(--text); }
+.df-obs-item.is-plain small {
+  display: block;
+  margin-top: 4px;
+  font-size: 11.5px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+.df-obs-foot {
+  margin-top: 14px;
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.16em;
+  line-height: 1.7;
+  color: var(--dim);
+}
+
+/* ============================================================
+   05 · BEHAVIORAL SIGNAL  ·  the strategic section
+   ============================================================ */
+.df-signal-card {
+  position: relative;
+  margin-top: 30px;
+  padding: 30px;
+  border: 1px solid rgba(56, 189, 248, 0.28);
+  border-radius: 20px;
+  background:
+    radial-gradient(700px 300px at 20% 0%, rgba(56, 189, 248, 0.08), transparent 70%),
+    linear-gradient(160deg, rgba(140, 180, 255, 0.03), rgba(140, 180, 255, 0.006));
+  overflow: hidden;
+}
+.df-signal-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.24em;
+  color: var(--cyan);
+  margin-bottom: 14px;
+}
+.df-signal-statement {
+  font-size: clamp(17px, 1.9vw, 22px);
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  max-width: 720px;
+}
+.df-signal-extra {
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(125, 180, 255, 0.1);
+  display: grid;
+  grid-template-columns: 128px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+.df-signal-extra b {
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: var(--dim);
+  padding-top: 2px;
+}
+.df-signal-extra p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+/* signal → insight → response chain
+   Base = mobile-first vertical progression; the >=768px block further
+   down turns it into one left-to-right row. */
+.df-chain {
+  margin-top: 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.df-chain-node {
+  width: 100%;
+  max-width: 620px;
+  padding: 16px 20px;
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  background: linear-gradient(160deg, rgba(20, 28, 42, 0.9), rgba(13, 18, 28, 0.9));
+  text-align: center;
+  opacity: 0.4;
+  transform: translateY(6px);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.5s ease;
+}
+.df-chain-node.is-lit {
+  opacity: 1;
+  transform: none;
+  border-color: rgba(56, 189, 248, 0.5);
+  box-shadow: 0 0 26px rgba(56, 189, 248, 0.12);
+}
+.df-chain-node .df-chain-kind {
+  display: block;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  color: var(--cyan);
+  margin-bottom: 8px;
+}
+.df-chain-node p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.df-chain-node.is-response { border-color: rgba(56, 189, 248, 0.4); background: rgba(56, 189, 248, 0.06); }
+.df-chain-node.is-response p { color: var(--text); }
+
+/* ---- >=768px: the three reasoning modules become ONE left-to-right flow
+   (SIGNAL -> PRODUCT INSIGHT -> DESIGN RESPONSE), using the section width
+   properly and cutting the vertical height. Below 768px the mobile-first
+   vertical progression above is kept. Scoped to .df-chain so the shared
+   .df-conn used elsewhere is untouched. The reveal already lights the
+   nodes in DOM order, i.e. left -> right. ---- */
+@media (min-width: 768px) {
+  .df-chain {
+    flex-direction: row;
+    align-items: stretch;            /* equal height, aligned centers */
+    justify-content: center;
+    gap: 0;
+    max-width: none;                 /* full content width — edges align exactly with .df-signal-card above */
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .df-chain .df-chain-node {
+    flex: 1 1 0;
+    max-width: none;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  /* horizontal connector: thin cyan line + a small directional chevron */
+  .df-chain .df-conn,
+  .df-chain .df-conn.is-short {
+    position: relative;
+    align-self: center;
+    flex: 0 0 auto;
+    width: 40px;
+    height: 1px;
+    margin: 0 2px;
+    background: linear-gradient(90deg, rgba(56, 189, 248, 0.15), rgba(56, 189, 248, 0.6));
+  }
+  .df-chain .df-conn::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 5px;
+    height: 5px;
+    margin-top: -3px;
+    border-top: 1px solid rgba(56, 189, 248, 0.65);
+    border-right: 1px solid rgba(56, 189, 248, 0.65);
+    transform: rotate(45deg);
+  }
+}
+
+/* ============================================================
+   06 · PRODUCT JOURNEY  ·  the key diagram + hypotheses
+   ============================================================ */
+.df-journey {
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 30px 26px;
+  background:
+    linear-gradient(rgba(125, 180, 255, 0.022) 1px, transparent 1px) 0 0 / 26px 26px,
+    linear-gradient(90deg, rgba(125, 180, 255, 0.022) 1px, transparent 1px) 0 0 / 26px 26px,
+    linear-gradient(160deg, rgba(140, 180, 255, 0.022), rgba(140, 180, 255, 0.004));
+}
+.df-journey-title {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.24em;
+  color: var(--cyan);
+  margin-bottom: 26px;
+}
+
+.df-track-scroll {
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(125, 180, 255, 0.2) transparent;
+  padding-bottom: 6px;
+}
+.df-track {
+  min-width: 680px;
+}
+
+/* row of phase nodes with a connecting rail */
+.df-phases {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.df-phases::before {
+  content: '';
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  top: 21px;
+  height: 2px;
+  background: rgba(125, 180, 255, 0.12);
+  border-radius: 2px;
+}
+.df-phases .df-phases-fill {
+  position: absolute;
+  left: 40px;
+  top: 21px;
+  height: 2px;
+  width: 0;
+  background: linear-gradient(90deg, var(--cyan), var(--cyan-2));
+  box-shadow: 0 0 12px var(--cyan-glow);
+  border-radius: 2px;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.df-phase {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+.df-phase-dot {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  background: linear-gradient(160deg, rgba(20, 28, 42, 0.95), rgba(13, 18, 28, 0.95));
+  border: 1px solid var(--border-strong);
+  transition: color 0.4s, border-color 0.4s, box-shadow 0.4s;
+}
+.df-phase-dot svg { width: 18px; height: 18px; }
+.df-phase-name {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  transition: color 0.4s;
+}
+.df-phase.is-lit .df-phase-dot {
+  color: var(--cyan);
+  border-color: rgba(56, 189, 248, 0.55);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+}
+.df-phase.is-lit .df-phase-name { color: var(--text); }
+
+/* mapped experience row underneath — reused as-is by the compact
+   end-to-end journey section further down the page */
+.df-map {
+  margin-top: 26px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: nowrap;
+}
+.df-map-step {
+  flex: 1;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  text-align: center;
+  padding: 10px 6px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(140, 180, 255, 0.015);
+  transition: color 0.4s, border-color 0.4s, background 0.4s;
+}
+.df-map-step.is-lit {
+  color: var(--text);
+  border-color: rgba(56, 189, 248, 0.4);
+  background: rgba(56, 189, 248, 0.05);
+}
+.df-map-arrow { color: rgba(56, 189, 248, 0.5); font-size: 11px; flex-shrink: 0; }
+
+/* ---- design principles (compact, embedded in the journey section) ----
+   Three cards, one row on desktop — down from five, so the journey
+   visualization above stays the dominant piece of evidence. */
+.df-hypo {
+  margin-top: 40px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 26px;
+  background: linear-gradient(160deg, rgba(56, 189, 248, 0.05), rgba(140, 180, 255, 0.01));
+}
+.df-hypo-head {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  color: var(--cyan);
+  margin-bottom: 20px;
+}
+.df-hypo-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.df-hypo-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(140, 180, 255, 0.018);
+}
+.df-hypo-num {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  color: var(--cyan);
+}
+.df-hypo-item b {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text);
+  line-height: 1.4;
+}
+.df-hypo-item span {
+  font-size: 11px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+/* ============================================================
+   07 · INFORMATION ARCHITECTURE  ·  modular layers + wireframes
+   ============================================================ */
+.df-layers {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-top: 8px;
+}
+.df-layer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 18px 16px;
+  border: 1px solid var(--border-strong);
+  border-radius: 14px;
+  background: linear-gradient(160deg, rgba(20, 28, 42, 0.9), rgba(13, 18, 28, 0.9));
+  position: relative;
+}
+.df-layer:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  width: 8px;
+  height: 1px;
+  background: rgba(56, 189, 248, 0.4);
+  z-index: 1;
+}
+.df-layer b {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--cyan);
+}
+.df-layer span {
+  font-size: 11px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+/* two real wireframes, each split across two 1440x900 presentation
+   screens. Two labelled groups (01/HOME, 02/SOFTWARE PRODUCT), each
+   with a one-line flow caption and its own image pair — compact and
+   readable, secondary to the reasoning above it. */
+.df-wf-groups {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.df-wf-group {
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: linear-gradient(160deg, rgba(140, 180, 255, 0.025), rgba(140, 180, 255, 0.006));
+}
+.df-wf-group-head {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: var(--cyan);
+  margin-bottom: 8px;
+}
+.df-wf-flow {
+  font-family: var(--mono);
+  font-size: 8.5px;
+  letter-spacing: 0.04em;
+  line-height: 1.7;
+  color: var(--dim);
+  margin-bottom: 14px;
+}
+.df-wf-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.df-wf-pair .nq-shot { border-radius: 8px; }
+
+/* ============================================================
+   08 · HOME REDESIGN / 09 · PRODUCT PAGE  ·  two real, full-
+   proportion mockups shown side by side — equal weight, one
+   complete presentation rather than two oversized sections. Text
+   stays brief underneath (.nq-copy, shared primitive).
+   ============================================================ */
+.df-mockup-stack {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 18px;
+}
+.df-mockup-stack > .nq-shot {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* ============================================================
+   10 · SUBSCRIPTION FLOW  ·  stepped indicator + real screens
+   ============================================================ */
+.df-steps-scroll {
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(125, 180, 255, 0.2) transparent;
+  padding-bottom: 6px;
+}
+.df-steps {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  min-width: 640px;
+}
+.df-step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 14px;
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  background: linear-gradient(160deg, rgba(20, 28, 42, 0.9), rgba(13, 18, 28, 0.9));
+  opacity: 0.45;
+  transform: translateY(6px);
+  transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.45s;
+}
+.df-step.is-lit { opacity: 1; transform: none; border-color: rgba(56, 189, 248, 0.5); box-shadow: 0 0 22px rgba(56, 189, 248, 0.1); }
+.df-step-num {
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.18em;
+  color: var(--cyan);
+}
+.df-step b {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--text);
+  line-height: 1.4;
+}
+.df-step span {
+  font-size: 10px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.df-step-auth {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 2px;
+}
+.df-step-auth i {
+  font-style: normal;
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  color: var(--cyan);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 5px;
+  padding: 4px 6px;
+  text-align: center;
+}
+
+/* mosaic: plans + access stacked on the left, the taller payment
+   screen on the right balances their combined height — one
+   deliberate editorial composition instead of three loose shots.
+   1.1fr/1fr is tuned to the real assets' proportions so both
+   columns land at roughly the same total height. */
+.df-sub-mosaic {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+.df-sub-mosaic-left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ============================================================
+   11 · FINAL EXPERIENCE  ·  compact system overview
+   (reuses .nq-shot / .nq-final-hero for the dominant HOME shot)
+   ============================================================ */
+
+/* below the dominant HOME shot: two art-directed columns —
+   5 short/wide feedback screens (left) against 2 tall/narrow
+   mobile screens (right). The 5fr/4fr split isn't decorative: at
+   these two groups' real asset proportions (feedback 759×314,
+   mobile 393×852) it's what makes the two columns land at
+   approximately the same total height — a plain 1fr/1fr or the
+   "42/58" starting ratio would leave the mobile side dramatically
+   taller. Labels reuse .df-wf-group-head/.df-wf-flow as-is. */
+.df-final-gallery {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: 5fr 4fr;
+  gap: 24px;
+  align-items: start;
+}
+.df-feedback-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.df-feedback-grid .df-feedback-wide { grid-column: 1 / -1; }
+.df-mobile-row {
+  display: flex;
+  gap: 16px;
+}
+.df-mobile-row > .nq-shot { flex: 1 1 0; min-width: 0; }
+
+/* ============================================================
+   12 · WHAT CHANGED  ·  five transformation cards
+   ============================================================ */
+.df-changed-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+.df-changed-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px 16px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: linear-gradient(160deg, rgba(140, 180, 255, 0.025), rgba(140, 180, 255, 0.006));
+}
+.df-changed-num {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  color: var(--cyan);
+}
+.df-changed-card h3 {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text);
+  line-height: 1.35;
+}
+.df-cc-row { display: flex; flex-direction: column; gap: 3px; }
+.df-cc-row b {
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  color: var(--dim);
+}
+.df-cc-row span { font-size: 11px; line-height: 1.5; color: var(--muted); }
+.df-cc-row.is-to span { color: var(--text); }
+.df-cc-sep { color: rgba(56, 189, 248, 0.5); font-size: 11px; }
+
+/* ============================================================
+   RESPONSIVE  ·  same breakpoints as css/case.css + case-nquadro.css
+   ============================================================ */
+@media (max-width: 1080px) {
+  .df-existing-grid { grid-template-columns: 1fr; gap: 26px; }
+
+  .df-layers { grid-template-columns: 1fr 1fr; }
+  .df-layer:not(:last-child)::after { display: none; }
+  .df-wf-groups { grid-template-columns: 1fr; gap: 18px; }
+  .df-changed-grid { grid-template-columns: 1fr 1fr; }
+  .df-signal-extra { grid-template-columns: 1fr; gap: 6px; }
+
+  /* home / product mockup pairs and the subscription mosaic stack
+     vertically — paired screenshots keep DOM order (task order on
+     mobile: plans → login → payment) */
+  .df-mockup-stack { flex-direction: column; }
+  .df-sub-mosaic { grid-template-columns: 1fr; }
+}
+
+/* final-experience gallery: keeps its two columns through tablet
+   (narrower than the site's usual 1080px stack point, since these
+   two groups stay legible well past it) and only stacks near phone
+   width — mobile experience first, system feedback underneath. */
+@media (max-width: 760px) {
+  .df-final-gallery { grid-template-columns: 1fr; gap: 28px; }
+  .df-final-mobile { order: 1; }
+  .df-final-feedback { order: 2; }
+}
+
+@media (max-width: 480px) {
+  .df-mobile-row { flex-direction: column; }
+}
+
+@media (max-width: 640px) {
+  .df-hypo-list,
+  .df-layers,
+  .df-wf-pair,
+  .df-changed-grid { grid-template-columns: 1fr; }
+
+  .df-map { flex-wrap: wrap; }
+  .df-map-step { flex: 1 1 40%; }
+
+  .df-lightbox { padding: 20px; }
+  .df-lightbox-close { top: 12px; right: 12px; }
+}
+
+/* ============================================================
+   REDUCED MOTION  ·  everything lands in its final, lit state
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .df-chain-node,
+  .df-step {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .df-phases .df-phases-fill { transition: none !important; }
+  .df-lightbox { transition: none !important; }
+  img.df-zoomable { transition: none !important; }
+}

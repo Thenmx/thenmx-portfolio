@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en" data-pf-screen-scale>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NMX, AI Workflow Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/section-head.css" />
+  <link rel="stylesheet" href="css/intro.css" />
+  <link rel="stylesheet" href="css/topbar.css" />
+  <link rel="stylesheet" href="css/cycle.css" />
+  <link rel="stylesheet" href="css/showcase.css" />
+  <link rel="stylesheet" href="css/interfaces.css" />
+  <link rel="stylesheet" href="css/about.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/utility-bar.css" />
+  <link rel="stylesheet" href="css/side-nav.css" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHX9JL5MT3"></script>
+  <script src="js/analytics.js"></script>
+</head>
+<body>
+
+  <!-- ============ TOPBAR ============ -->
+  <!-- homepage: the portfolio signature is intentionally omitted here — the
+       intro eyebrow "NANDO MORI — PRODUCT DESIGNER" carries the identity.
+       Case-study pages keep their full .cs-signature. The empty bar is kept
+       for its spacing (--pf-topbar-h) and layout parity with the case pages. -->
+  <header class="cs-topbar" data-watch></header>
+
+  <!-- ============ 00 · INTRO · POSITIONING ============ -->
+  <section class="intro" id="intro">
+    <!-- decorative signal nodes (css/intro.css · atmosphere) -->
+    <div class="intro-nodes" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="intro-inner">
+
+      <div class="pf-shead-eyebrow intro-eyebrow">
+        <span class="live-dot"></span>
+        <span>NANDO MORI — PRODUCT DESIGNER</span>
+      </div>
+
+      <h1 class="pf-shead-title intro-title">From product problems<br /><span class="intro-title-accent">to working solutions.</span></h1>
+
+      <p class="intro-lead">I'm a Product Designer using design, AI and technology to turn ideas into testable experiences and working prototypes, with UX/UI and visual craft as the foundation.</p>
+
+      <div class="intro-lang" data-i18n-skip role="group" aria-label="Language">
+        <button type="button" class="intro-lang-btn" data-pf-lang="it" aria-label="Switch language to Italian">ITA</button>
+        <span class="intro-lang-sep" aria-hidden="true">/</span>
+        <button type="button" class="intro-lang-btn" data-pf-lang="en" aria-label="Switch language to English">ENG</button>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="hero" id="hero">
+
+    <!-- section intro — narrative frame ABOVE the workflow: product
+         questions become tangible, working prototypes. Shared macro
+         heading system (.pf-shead-*), same as THE CASES / THE CYCLE. -->
+    <div class="hero-intro">
+      <div class="pf-shead-eyebrow">
+        <span class="live-dot"></span>
+        <span>LIVE AI</span>
+        <span class="eyebrow-sep">/</span>
+        <span class="eyebrow-dim">FROM QUESTION TO WORKING PROTOTYPE</span>
+      </div>
+      <h2 class="pf-shead-title">Ideas become<br /><span class="pf-shead-title-grad">testable systems.</span></h2>
+      <p class="hero-intro-lead">I use design, AI and technology to turn uncertain product questions into working prototypes, making ideas tangible enough to explore, test and evaluate before deeper investment.</p>
+    </div>
+
+    <div class="hero-grid">
+
+      <!-- ============ MAIN ANIMATION PANEL ============ -->
+      <div class="main-panel glass">
+        <div class="panel-head">
+          <div class="panel-title-wrap">
+            <div class="panel-title" id="mainTitle">AI PHOTO WF EVALUATION</div>
+            <div class="panel-note" id="demoNote">EXAMPLE RUN · ILLUSTRATIVE DATA</div>
+          </div>
+          <div class="head-right">
+            <div class="phase-chip" id="phaseChip">01 · INPUT</div>
+            <button class="play-btn" id="playBtn" aria-label="Pause animation"></button>
+          </div>
+        </div>
+        <div class="panel-stage" id="stage"></div>
+      </div>
+
+      <!-- ============ RIGHT SIDE · PRODUCT STORY ============
+           Why the prototype exists, what question it investigates and
+           why this MVP was built. Content per project — rendered and
+           kept in sync with the project selector by hero.js. -->
+      <aside class="side-col" id="storyPanel"></aside>
+    </div>
+
+    <!-- ============ TIMELINE ============ -->
+    <div class="timeline" id="timeline">
+      <div class="tl-track">
+        <div class="tl-fill" id="tlFill"></div>
+      </div>
+      <div class="tl-dots" id="tlDots"></div>
+      <div class="tl-transitions" id="tlTransitions"></div>
+    </div>
+
+    <!-- ============ PROJECT SWITCH ============ -->
+    <div class="project-switch" id="projectSwitch"></div>
+
+  </section>
+
+  <!-- ============ THE INTERFACES · REAL CLIENT PRODUCTS ============ -->
+  <section class="interfaces" id="interfaces">
+    <div class="interfaces-inner">
+
+      <!-- ── 01 · section header · editorial, no vanity metrics ── -->
+      <header class="ui-head">
+        <div class="ui-eyebrow">
+          <span class="live-dot"></span>
+          <span>THE INTERFACES</span>
+          <span class="eyebrow-sep">/</span>
+          <span class="eyebrow-dim">REAL CLIENT PRODUCTS</span>
+        </div>
+        <h2 class="ui-title">Designed for <span class="ui-title-grad">real products.</span><br />Shaped by <span class="ui-title-grad">real constraints.</span></h2>
+        <p class="ui-sub">
+          Selected client work across B2B products, SaaS, booking experiences
+          and editorial platforms.
+        </p>
+      </header>
+
+      <!-- ── 02 · main project stage · one large preview + editorial info ──
+           .ui-preview-viewport is the animation surface: NQUADRO cycles three
+           final hero states inside it (.ui-slides, driven by js/interfaces.js);
+           other projects show a single static screenshot in #uiShot. ── -->
+      <div class="ui-stage" id="uiStage">
+
+        <figure class="ui-preview">
+          <div class="ui-preview-frame">
+            <div class="ui-preview-chrome">
+              <span class="ui-preview-dots"><i></i><i></i><i></i></span>
+              <span class="ui-preview-url" id="uiPreviewUrl">nquadro</span>
+            </div>
+            <div class="ui-preview-viewport" id="uiViewport" data-project="nquadro">
+              <img id="uiShot"
+                   src="assets/ui/nquadro-slide-1.webp"
+                   srcset="assets/ui/nquadro-slide-1-800.webp 800w, assets/ui/nquadro-slide-1.webp 1440w"
+                   sizes="(max-width: 760px) 100vw, 1440px"
+                   width="1320" height="916"
+                   loading="lazy" decoding="async"
+                   alt="NQUADRO, homepage interface design" />
+              <!-- NQUADRO hero slider · slides + preview-level indicator are
+                   populated once by js/interfaces.js and reused per transition -->
+              <div class="ui-slides" id="uiSlides" aria-hidden="true" hidden></div>
+            </div>
+          </div>
+          <figcaption class="ui-preview-foot">
+            <span class="ui-preview-label" id="uiPreviewLabel">01 · HOMEPAGE</span>
+            <span class="ui-slider-dots" id="uiSliderDots" role="tablist" hidden></span>
+          </figcaption>
+        </figure>
+
+        <div class="ui-info" id="uiInfo">
+          <div class="ui-info-index">
+            <span id="uiIndex">01</span><span class="ui-info-index-total"> / 03</span>
+          </div>
+          <span class="ui-info-type" id="uiType">CLIENT PROJECT</span>
+          <h3 class="ui-info-name" id="uiName">NQUADRO</h3>
+          <p class="ui-info-cat" id="uiCat">B2B PRODUCT CATALOG · UX/UI · IA</p>
+
+          <p class="ui-info-headline" id="uiHeadline">
+            Reframing a complex catalog around product discovery.
+          </p>
+          <p class="ui-info-desc" id="uiDesc">
+            A broad product offering required a clearer way to understand, explore
+            and navigate the catalog. The experience was reorganized around product
+            use and context, making relevant products easier to discover.
+          </p>
+
+          <div class="ui-scope" id="uiScope" aria-label="Project scope"></div>
+
+          <div class="ui-facts" id="uiFacts"></div>
+
+          <div class="ui-cta-wrap" id="uiCtaWrap"></div>
+        </div>
+
+      </div>
+
+      <!-- ── 03 · project selector · cards rendered from projectsData ── -->
+      <div class="ui-projects" id="uiProjects" role="group" aria-label="Select interface project"></div>
+
+    </div>
+  </section>
+
+  <!-- ============ THE CYCLE · METHODOLOGY ============ -->
+  <section class="cycle" id="cycle">
+    <div class="cycle-inner">
+
+      <div class="cycle-head">
+        <div class="cycle-eyebrow">
+          <span class="live-dot"></span>
+          <span>THE CYCLE</span>
+          <span class="eyebrow-sep">/</span>
+          <span class="eyebrow-dim">SAME THINKING · EVERY PROJECT</span>
+        </div>
+        <h2 class="cycle-title">Different outputs.<br /><span class="cycle-title-grad">One design process.</span></h2>
+        <p class="cycle-sub">
+          Every project starts with a problem. Research turns evidence into hypotheses,
+          hypotheses become real products and experiences, and their results generate new
+          insights. Those insights reveal what to improve next, and the cycle starts again.
+        </p>
+      </div>
+
+      <div class="cycle-stage" id="cycleStage">
+
+        <div class="cycle-row">
+          <div class="cycle-line"><span class="cycle-line-flow"></span></div>
+          <div class="c-node" data-node="0"><span class="c-dot"></span>PROBLEM</div>
+          <div class="c-node" data-node="1"><span class="c-dot"></span>RESEARCH</div>
+          <div class="c-node" data-node="2"><span class="c-dot"></span>HYPOTHESIS</div>
+          <div class="c-node c-output" data-node="3" id="cycleOutput">
+            <span class="c-output-label">OUTPUT</span>
+            <span class="c-word" id="cycleWord">AI WORKFLOW</span>
+          </div>
+          <div class="c-node" data-node="4"><span class="c-dot"></span>INSIGHT</div>
+        </div>
+
+        <div class="cycle-loop" aria-hidden="true">
+          <svg viewBox="0 0 1000 84" preserveAspectRatio="none">
+            <path class="loop-base" d="M 983 6 L 983 50 Q 983 60 973 60 L 27 60 Q 17 60 17 50 L 17 14" fill="none" />
+            <path class="loop-flow" d="M 983 6 L 983 50 Q 983 60 973 60 L 27 60 Q 17 60 17 50 L 17 14" fill="none" />
+          </svg>
+          <svg class="loop-arrow" viewBox="0 0 16 10" width="14" height="9">
+            <path d="M 2 9 L 8 2 L 14 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <div class="cycle-loop-label">EVERY INSIGHT REVEALS THE NEXT PROBLEM</div>
+        </div>
+
+        <div class="cycle-loop-mobile">
+          <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13.5 8a5.5 5.5 0 1 1-1.6-3.9M13.5 1.5v3h-3" />
+          </svg>
+          EVERY INSIGHT REVEALS THE NEXT PROBLEM
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT / PROFILE ============ -->
+  <section class="about-section" id="about">
+    <div class="about-inner">
+
+      <!-- ── section heading: outside the module, shared macro-heading
+             system (same as THE CYCLE / THE AI CASES / THE INTERFACES) ── -->
+      <div class="about-head">
+        <div class="pf-shead-eyebrow">
+          <span class="live-dot"></span>
+          <span>ABOUT ME</span>
+          <span class="eyebrow-sep">/</span>
+          <span class="eyebrow-dim">THE PERSON BEHIND THE SYSTEMS</span>
+        </div>
+        <h2 class="pf-shead-title">I design <span class="about-accent">the system.</span><br />Not just the screen.</h2>
+      </div>
+
+      <!-- ── main profile panel: portrait · statement · career ── -->
+      <div class="about-profile glass">
+
+        <div class="about-profile-grid">
+
+          <div class="about-portrait">
+            <img src="assets/about me/io official 2.png" width="562" height="790" alt="Portrait of the designer" loading="lazy" decoding="async" />
+          </div>
+
+          <div class="about-statement">
+            <p class="about-bio">
+              I design digital products starting from real problems, turning ideas and requirements into experiences, interfaces and working prototypes.
+            </p>
+            <p class="about-bio">
+              I work across product design, UX/UI and prototyping, using AI, automation and code as tools to explore and build faster.
+            </p>
+            <div class="about-location">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z" /><circle cx="12" cy="9" r="2.4" /></svg>
+              <span>Rome, Italy</span>
+            </div>
+
+            <div class="about-metrics">
+              <div class="about-metric">
+                <b>6+</b>
+                <span>YEARS EXPERIENCE</span>
+              </div>
+              <div class="about-metric-sep"></div>
+              <div class="about-metric">
+                <b>10+</b>
+                <span>DIGITAL PRODUCTS / WEBSITES</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-career">
+
+            <div class="about-career-group">
+              <div class="about-subeyebrow"><span class="live-dot"></span>EDUCATION</div>
+              <div class="about-timeline">
+                <div class="about-tl-item">
+                  <span class="about-tl-year">2018</span>
+                  <span class="about-tl-node"></span>
+                  <div class="about-tl-body">
+                    <b>Bachelor's Degree in Communication Sciences,<br />Digital Cultures and Technologies</b>
+                    <span>La Sapienza University, Rome</span>
+                  </div>
+                </div>
+                <div class="about-tl-item">
+                  <span class="about-tl-year">2025</span>
+                  <span class="about-tl-node"></span>
+                  <div class="about-tl-body">
+                    <b>Master in UX &amp; IA</b>
+                    <span>IULM University, Rome</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-career-group">
+              <div class="about-subeyebrow"><span class="live-dot"></span>EXPERIENCE</div>
+              <div class="about-timeline">
+                <div class="about-tl-item">
+                  <span class="about-tl-year">2019 – 2023</span>
+                  <span class="about-tl-node"></span>
+                  <div class="about-tl-body">
+                    <b>UI &amp; Product Designer</b>
+                    <span>Fusco Fit</span>
+                    <span class="about-tag">Fitness Industry</span>
+                  </div>
+                </div>
+                <div class="about-tl-item is-current">
+                  <span class="about-tl-year">2024 – Present</span>
+                  <span class="about-tl-node"></span>
+                  <div class="about-tl-body">
+                    <b>UX &amp; UI Designer</b>
+                    <span>Archetipo Agency</span>
+                    <span class="about-tag">Digital Marketing Agency</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── lower levels: capabilities (primary) → stack (supporting).
+             One hierarchy, not a grid of equal job titles:
+             CORE = the product-design practice, ENABLERS = the tools
+             of leverage underneath it. ── -->
+      <div class="about-row">
+
+        <div class="about-capabilities glass">
+          <div class="about-eyebrow">
+            <span class="live-dot"></span>
+            <span>CAPABILITIES</span>
+            <span class="eyebrow-sep">/</span>
+            <span class="eyebrow-dim">HOW I WORK</span>
+          </div>
+
+          <div class="about-cap-rows">
+            <div class="about-cap-row is-core">
+              <div class="about-cap-label"><span class="about-cap-idx">01</span><span>CORE</span></div>
+              <ul class="about-cap-list">
+                <li>PRODUCT DESIGN</li>
+                <li>UX/UI</li>
+                <li>RAPID PROTOTYPING</li>
+                <li>PRODUCT BUILDING</li>
+              </ul>
+            </div>
+            <div class="about-cap-row is-enablers">
+              <div class="about-cap-label"><span class="about-cap-idx">02</span><span>ENABLERS</span></div>
+              <ul class="about-cap-list">
+                <li>AI</li>
+                <li>AUTOMATION</li>
+                <li>CODE</li>
+                <li>DATA</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-stack">
+          <div class="about-eyebrow">
+            <span class="live-dot"></span>
+            <span>MY STACK</span>
+            <span class="eyebrow-sep">/</span>
+            <span class="eyebrow-dim">TOOLS I USE EVERY DAY</span>
+          </div>
+
+          <div class="about-stack-grid">
+            <div class="about-stack-cat">
+              <b>DESIGN</b>
+              <p class="about-stack-tools"><span class="about-stack-tool">Figma</span> <span class="about-stack-tool">FigJam</span> <span class="about-stack-tool">Adobe Suite</span></p>
+            </div>
+            <div class="about-stack-cat">
+              <b>BUILD</b>
+              <p class="about-stack-tools"><span class="about-stack-tool">Claude</span> <span class="about-stack-tool">VS Code</span> <span class="about-stack-tool">HTML / CSS</span> <span class="about-stack-tool">WordPress</span> <span class="about-stack-tool">Webflow</span></p>
+            </div>
+            <div class="about-stack-cat">
+              <b>AUTOMATION</b>
+              <p class="about-stack-tools"><span class="about-stack-tool">n8n</span> <span class="about-stack-tool">APIs</span> <span class="about-stack-tool">Supabase</span></p>
+            </div>
+            <div class="about-stack-cat">
+              <b>AI &amp; RESEARCH</b>
+              <p class="about-stack-tools"><span class="about-stack-tool">OpenAI</span> <span class="about-stack-tool">Gemini</span> <span class="about-stack-tool">Perplexity</span> <span class="about-stack-tool">User Research</span> <span class="about-stack-tool">Data Analysis</span></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ 06 · CONTACT ============ -->
+  <section class="contact" id="contact" aria-labelledby="contactHeading">
+    <div class="contact-inner">
+
+      <!-- ── LEFT · editorial column ── -->
+      <div class="contact-lead">
+
+        <div class="contact-eyebrow">
+          <span class="live-dot"></span>
+          <span>06 / CONTACT</span>
+        </div>
+
+        <span class="contact-rule" aria-hidden="true"></span>
+
+        <h2 class="pf-shead-title contact-headline" id="contactHeading">LET'S<br /><span class="contact-accent">CONNECT.</span></h2>
+
+        <p class="contact-intro">Want to talk about product design, AI or the projects in this portfolio?<br />You can reach me directly here.</p>
+
+        <p class="contact-topics">PRODUCT DESIGN&nbsp;&nbsp;&bull;&nbsp;&nbsp;AI&nbsp;&nbsp;&bull;&nbsp;&nbsp;AUTOMATION&nbsp;&nbsp;&bull;&nbsp;&nbsp;UX/UI</p>
+
+      </div>
+
+      <!-- ── RIGHT · contact system ── -->
+      <div class="contact-system">
+
+        <div class="contact-cards">
+
+          <a class="contact-card" id="contactEmail" href="mailto:thenmx11@gmail.com"
+             aria-label="Send an email to Nando Mori">
+            <div class="contact-card-head">
+              <span class="contact-card-num">01</span>
+              <span class="contact-card-kind">EMAIL</span>
+            </div>
+            <span class="contact-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              <span class="contact-card-dot"></span>
+            </span>
+            <span class="contact-card-value" data-contact="email">thenmx11@gmail.com</span>
+            <span class="contact-card-cta">
+              <span class="contact-card-cta-label">SEND AN EMAIL</span>
+              <svg class="contact-card-arrow" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            </span>
+          </a>
+
+          <a class="contact-card" id="contactLinkedin" href="https://www.linkedin.com/in/nando-mori-691299172/"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="View Nando Mori on LinkedIn">
+            <div class="contact-card-head">
+              <span class="contact-card-num">02</span>
+              <span class="contact-card-kind">LINKEDIN</span>
+            </div>
+            <span class="contact-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 10.5V16"/><circle cx="8" cy="7.6" r="0.6" fill="currentColor"/><path d="M12 16v-5.5M12 13.2a2.4 2.4 0 0 1 4.8 0V16"/></svg>
+              <span class="contact-card-dot"></span>
+            </span>
+            <span class="contact-card-value" data-contact="linkedin">Nando Mori</span>
+            <span class="contact-card-cta">
+              <span class="contact-card-cta-label">VIEW PROFILE</span>
+              <svg class="contact-card-arrow" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            </span>
+          </a>
+
+        </div>
+
+        <div class="contact-panel glass">
+          <div class="contact-panel-col">
+            <div class="contact-panel-label is-lead">&gt; LET'S TALK ABOUT</div>
+            <ul class="contact-panel-list">
+              <li>Product Design</li>
+              <li>AI Products &amp; Workflows</li>
+              <li>UX/UI &amp; Digital Experiences</li>
+              <li>Product Strategy</li>
+            </ul>
+          </div>
+          <div class="contact-panel-col contact-panel-col-focus">
+            <div class="contact-panel-label">&gt; CURRENT FOCUS</div>
+            <p class="contact-panel-focus">Designing products where UX, AI and automation become one system.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ── closing row ── -->
+      <div class="contact-close">
+        <div class="contact-close-sep"></div>
+        <div class="contact-close-row">
+          <span class="contact-thanks">, THANKS FOR BEING HERE,</span>
+          <a class="contact-top" href="#hero">
+            <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 13V3M4 7l4-4 4 4"/></svg>
+            BACK TO TOP
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="js/config.js"></script>
+  <script src="js/renderers.js"></script>
+  <script src="js/hero.js"></script>
+  <script src="js/cycle.js"></script>
+  <script src="js/interfaces.js"></script>
+  <script src="js/about.js"></script>
+  <script src="js/i18n-dict.js"></script>
+  <script src="js/utility-bar.js"></script>
+  <script>
+    /* homepage side-nav destinations — order and labels are fixed */
+    window.PF_SIDENAV_ITEMS = [
+      { label: '01 / LIVE AI',        target: '#hero' },
+      { label: '02 / THE INTERFACES', target: '#interfaces' },
+      { label: '03 / THE CYCLE',      target: '#cycle' },
+      { label: '04 / ABOUT ME',       target: '#about' },
+      { label: '05 / CONTACT',        target: '#contact' }
+    ];
+
+    /* single source for the direct-contact channels (06 / CONTACT). */
+    window.PF_CONTACT = {
+      email: 'thenmx11@gmail.com',
+      linkedinName: 'Nando Mori',
+      linkedinUrl: 'https://www.linkedin.com/in/nando-mori-691299172/'
+    };
+  </script>
+  <script src="js/side-nav.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+</html>

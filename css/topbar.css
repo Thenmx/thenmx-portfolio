@@ -1,0 +1,99 @@
+/* ============================================================
+   GLOBAL PORTFOLIO HEADER — shared across every page (home +
+   case studies). Depends only on tokens from css/hero.css
+   (--mono, --muted, --cyan, --border), so it can be dropped
+   into any page right after hero.css.
+
+   Structure:
+   - .cs-topbar       the bar itself (empty left side by design)
+   - .cs-signature    portfolio identity, absolutely centered on
+                       the viewport regardless of what else is
+                       in the bar (case studies only, see below)
+   - .cs-back         "‹ BACK TO PROJECTS" — case-study pages only,
+                       omitted entirely on the homepage
+   ============================================================ */
+
+.cs-topbar {
+  position: relative;
+  z-index: 2;
+  max-width: 1540px;
+  margin: 0 auto;
+  padding: 20px 32px;
+  min-height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+/* ---- portfolio signature: absolutely centered on the viewport,
+   independent of the (empty) left side and the back-button width ---- */
+.cs-signature {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.cs-signature-short { display: none; }
+
+/* below this width the full signature would collide with the
+   fixed-width back-projects control — swap to the short form */
+@media (max-width: 860px) {
+  .cs-signature-full { display: none; }
+  .cs-signature-short { display: inline; }
+}
+
+/* below this width the fixed-width back-projects button is wide enough
+   that even the short signature can't stay truly viewport-centered
+   without touching it — fall back to centering within the remaining
+   space instead (still one line, still centered, never overlapping) */
+@media (max-width: 700px) {
+  .cs-signature {
+    position: static;
+    left: auto;
+    top: auto;
+    transform: none;
+    flex: 1 1 auto;
+    min-width: 0;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* the signature now shares the flex row — keep the button's own
+     size fixed so it can never be squeezed into wrapping */
+  .cs-back { flex-shrink: 0; }
+}
+
+.cs-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  padding: 10px 18px;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  background: rgba(140, 180, 255, 0.02);
+  color: var(--muted);
+  text-decoration: none;
+  transition: all 0.25s;
+}
+
+.cs-back:hover {
+  color: var(--cyan);
+  border-color: rgba(56, 189, 248, 0.4);
+  background: rgba(56, 189, 248, 0.05);
+}
+
+@media (max-width: 1080px) {
+  .cs-topbar { padding: 16px; min-height: 76px; }
+}

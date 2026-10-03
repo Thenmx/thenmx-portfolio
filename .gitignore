@@ -1,0 +1,30 @@
+# Local tooling / build output
+.claude/
+dist/
+
+# Development & test pages (not public)
+index-bg-test.html
+nmx-logo.html
+
+# Private notes, consultations, CV/portfolio PDFs
+*.md
+*.pdf
+
+# OS / editor junk
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/
+
+# Archive / source assets kept locally only (unused by the public site).
+# Keep in sync with $archiveAssets in deploy/build-dist.ps1.
+assets/about me/io official bk.png
+assets/ui/docuflow-*
+assets/ui/eroome-*
+assets/ui/nova-*
+assets/ui/NQUADRO_HOME.png
+assets/ui/nquadro-01.png
+assets/ui/nquadro-slide-1.png
+assets/ui/nquadro-slide-2.png
+assets/ui/nquadro-slide-3.png

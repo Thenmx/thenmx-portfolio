@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en" data-pf-screen-scale>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NMX, AI Travel Brain · Case Study</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/topbar.css" />
+  <link rel="stylesheet" href="css/case.css" />
+  <link rel="stylesheet" href="css/case-travel.css" />
+  <link rel="stylesheet" href="css/utility-bar.css" />
+  <link rel="stylesheet" href="css/side-nav.css" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHX9JL5MT3"></script>
+  <script src="js/analytics.js"></script>
+</head>
+<body>
+
+  <!-- ============ TOPBAR ============ -->
+  <header class="cs-topbar" data-watch>
+    <span class="cs-signature">
+      <span class="cs-signature-full">NANDO MORI — PRODUCT DESIGNER — PORTFOLIO 2027</span>
+      <span class="cs-signature-short">NANDO MORI — PRODUCT DESIGNER</span>
+    </span>
+    <a class="cs-back" href="index.html#hero">
+      <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3L5 8l5 5"/></svg>
+      BACK TO PROJECTS
+    </a>
+  </header>
+
+  <div class="cs-shell">
+
+    <!-- ============ SECTION RAIL ============ -->
+    <aside class="cs-rail" aria-label="Page sections">
+      <a class="cs-rail-link active" href="#overview">01 / OVERVIEW</a>
+      <a class="cs-rail-link" href="#pipeline">02 / KNOWLEDGE PIPELINE</a>
+      <a class="cs-rail-link" href="#architecture">03 / ARCHITECTURE</a>
+      <a class="cs-rail-link" href="#outputs">04 / FROM BRAIN TO OUTPUT</a>
+      <a class="cs-rail-link" href="#why">05 / WHY NOT JUST AI?</a>
+      <a class="cs-rail-link" href="#proof">06 / WORKING OUTPUT</a>
+      <a class="cs-rail-link" href="#state">07 / BUILD · TEST · LEARN</a>
+      <a class="cs-rail-link" href="#next">08 / NEXT STEPS</a>
+      <a class="cs-rail-link cs-rail-back" href="index.html#hero">← BACK TO PROJECTS</a>
+    </aside>
+
+    <main class="cs-main">
+
+      <!-- ============ 01 · OVERVIEW ============ -->
+      <section class="cs-section cs-hero" id="overview" data-watch>
+        <div class="cs-hero-grid">
+
+          <div class="cs-head">
+            <div class="cs-eyebrow">
+              <span class="live-dot"></span>
+              <span>01 / KNOWLEDGE-DRIVEN GENERATION</span>
+            </div>
+            <h1 class="cs-hero-title">AI Travel<br /><span class="cs-title-grad">Brain</span></h1>
+            <p class="cs-hero-desc">
+              A source-grounded travel knowledge system that transforms selected web sources into
+              <b>structured destination data</b>, creating a reusable factual layer for
+              AI-powered travel experiences.
+            </p>
+            <div class="tb-flags">
+              <span class="tb-flag">MULTI-SOURCE INPUT</span>
+              <span class="tb-flag">SOURCE-LINKED KNOWLEDGE</span>
+              <span class="tb-flag">20 MAPS TESTED</span>
+            </div>
+          </div>
+
+          <!-- system diagram: SOURCES → TRAVEL BRAIN → OUTPUTS -->
+          <div class="tb-diagram glass cs-reveal">
+
+            <div class="tb-diagram-col">
+              <span class="tb-diagram-label">SOURCES</span>
+              <span class="tb-src">
+                <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"/><path d="M1.5 8h13M8 1.5c2 2 2 11 0 13M8 1.5c-2 2-2 11 0 13"/></svg>
+                WEB SOURCE
+              </span>
+              <span class="tb-src">
+                <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 1.5h5l3 3v10H4z"/><path d="M9 1.5v3h3"/></svg>
+                DOCUMENT
+              </span>
+              <span class="tb-src">
+                <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="4" cy="4" r="2"/><circle cx="12" cy="4" r="2"/><circle cx="8" cy="12" r="2"/><path d="M5.5 5.3L10 10.7M10.5 5.3L6 10.7"/></svg>
+                KNOWLEDGE SOURCE
+              </span>
+              <span class="tb-src">
+                <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v12M2 8h12"/></svg>
+                + MORE
+              </span>
+            </div>
+
+            <div class="tb-diagram-arrow">
+              <svg viewBox="0 0 24 12" width="24" height="12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6h20M16 1l5 5-5 5"/></svg>
+            </div>
+
+            <div class="tb-brain">
+              <svg class="tb-brain-net" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <line class="tb-bn-link" x1="90" y1="90" x2="90" y2="28"/>
+                <line class="tb-bn-link" x1="90" y1="90" x2="143" y2="59"/>
+                <line class="tb-bn-link" x1="90" y1="90" x2="143" y2="121"/>
+                <line class="tb-bn-link" x1="90" y1="90" x2="90" y2="152"/>
+                <line class="tb-bn-link" x1="90" y1="90" x2="37" y2="121"/>
+                <line class="tb-bn-link" x1="90" y1="90" x2="37" y2="59"/>
+                <circle class="tb-bn-ring" cx="90" cy="90" r="30"/>
+                <circle class="tb-bn-hub" cx="90" cy="90" r="15"/>
+                <circle class="tb-bn-node" cx="90" cy="28" r="4.5"/>
+                <circle class="tb-bn-node" cx="143" cy="59" r="4.5"/>
+                <circle class="tb-bn-node" cx="143" cy="121" r="4.5"/>
+                <circle class="tb-bn-node" cx="90" cy="152" r="4.5"/>
+                <circle class="tb-bn-node" cx="37" cy="121" r="4.5"/>
+                <circle class="tb-bn-node" cx="37" cy="59" r="4.5"/>
+              </svg>
+              <span class="tb-brain-name">TRAVEL BRAIN</span>
+              <span class="tb-brain-sub">STRUCTURED<br />DESTINATION KNOWLEDGE</span>
+            </div>
+
+            <div class="tb-diagram-arrow">
+              <svg viewBox="0 0 24 12" width="24" height="12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6h20M16 1l5 5-5 5"/></svg>
+            </div>
+
+            <div class="tb-diagram-col">
+              <span class="tb-diagram-label">OUTPUTS</span>
+              <span class="tb-out is-active">
+                <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.5 3.5L13 4.5"/></svg>
+                <span class="tb-out-name">MAP</span>
+                <span class="tb-out-tag">20 MAPS TESTED</span>
+              </span>
+              <span class="tb-out">
+                <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h10M3 8h10M3 12h6"/></svg>
+                <span class="tb-out-name">STORY ENGINE</span>
+                <span class="tb-out-tag">PLANNED</span>
+              </span>
+              <span class="tb-out">
+                <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="10" rx="1.5"/><path d="M5 7h6M5 10h4"/></svg>
+                <span class="tb-out-name">LANDING PAGES</span>
+                <span class="tb-out-tag">PLANNED</span>
+              </span>
+              <span class="tb-out">
+                <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="10" rx="1.5"/><circle cx="6" cy="7" r="1.3"/><path d="M14 11l-3.5-3.5L4 14"/></svg>
+                <span class="tb-out-name">ADV / CAMPAIGN</span>
+                <span class="tb-out-tag">PLANNED</span>
+              </span>
+              <span class="tb-out is-planned">
+                <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="4" cy="8" r="1"/><circle cx="8" cy="8" r="1"/><circle cx="12" cy="8" r="1"/></svg>
+                <span class="tb-out-name">MORE</span>
+                <span class="tb-out-tag">PLANNED</span>
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ============ PROJECT CONTEXT · bridge between hero and 02 ============ -->
+      <section class="cs-section tb-context" data-watch aria-labelledby="tbContextTitle">
+        <div class="tb-context-panel cs-reveal">
+          <div class="tb-context-grid">
+            <div class="tb-context-head">
+              <div class="cs-col-label">PROJECT CONTEXT</div>
+              <h2 class="tb-origin-title" id="tbContextTitle">The journey starts<br />before <span class="cs-title-grad">departure</span>.</h2>
+            </div>
+            <div class="tb-context-body">
+              <p class="cs-sub">For travel agencies and tour operators, the travel experience begins during discovery. Destinations, itineraries and places need to become material that can inform, engage and help travelers imagine the journey before it begins.</p>
+              <p class="cs-sub">The project explores how selected travel sources can become a structured, reusable knowledge layer capable of supporting multiple AI-assisted outputs without rebuilding the context from scratch each time.</p>
+            </div>
+          </div>
+          <p class="tb-origin-close"><span>One knowledge layer.</span> <span>Multiple experiences built on top.</span></p>
+        </div>
+      </section>
+
+      <!-- ============ 02 · KNOWLEDGE PIPELINE ============ -->
+      <section class="cs-section" id="pipeline" data-watch>
+        <div class="cs-head">
+          <div class="cs-eyebrow">
+            <span class="live-dot"></span>
+            <span>02 / KNOWLEDGE PIPELINE</span>
+            <span class="eyebrow-sep">/</span>
+            <span class="eyebrow-dim">ROUTE AND STRUCTURE BEFORE GENERATION</span>
+          </div>
+          <h2 class="cs-title">From sources to <span class="cs-title-grad">structured knowledge</span>.</h2>
+          <p class="cs-sub">Selected travel sources are transformed into reusable destination knowledge while preserving their provenance.</p>
+        </div>
+
+        <div class="cs-reveal">
+          <div class="cs-engines tb-pipe-cards">
+
+            <article class="cs-engine">
+              <div class="cs-engine-top">
+                <span class="cs-engine-icon">
+                  <svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 11V3M4.5 6.5L8 3l3.5 3.5M3 13h10"/></svg>
+                </span>
+                <span class="cs-engine-num">01</span>
+              </div>
+              <h3>Source Ingestion</h3>
+              <span class="cs-engine-role">TOUR + SOURCES IN</span>
+              <p>Selected travel sources enter the pipeline together with the tour structure.</p>
+              <div class="cs-io">
+                <span class="cs-io-label">INPUT</span>
+                <span class="cs-io-item">Tour stops</span>
+                <span class="cs-io-item">Selected sources</span>
+              </div>
+              <div class="cs-io">
+                <span class="cs-io-label">OUTPUT</span>
+                <span class="cs-io-item">Raw destination content</span>
+              </div>
+            </article>
+
+            <article class="cs-engine">
+              <div class="cs-engine-top">
+                <span class="cs-engine-icon">
+                  <svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l4 4-4 4M7 12h7"/></svg>
+                </span>
+                <span class="cs-engine-num">02</span>
+              </div>
+              <h3>Source Relevance</h3>
+              <span class="cs-engine-role">PLACE / SOURCE MATCHING</span>
+              <p>Each source is evaluated against every requested destination before extraction.</p>
+              <div class="cs-io">
+                <span class="cs-io-label">INPUT</span>
+                <span class="cs-io-item">Requested stops</span>
+                <span class="cs-io-item">Source documents</span>
+              </div>
+              <div class="cs-io">
+                <span class="cs-io-label">OUTPUT</span>
+                <span class="cs-io-item">Relevant source IDs per place</span>
+              </div>
+            </article>
+
+            <article class="cs-engine">
+              <div class="cs-engine-top">
+                <span class="cs-engine-icon">
+                  <svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.8l1.6 3.4 3.7.5-2.7 2.6.7 3.7L8 12.8l-3.3 1.8.7-3.7L2.7 6l3.7-.5L8 1.8z"/></svg>
+                </span>
+                <span class="cs-engine-num">03</span>
+              </div>
+              <h3>Knowledge Extraction</h3>
+              <span class="cs-engine-role">SOURCE-GROUNDED EXTRACTION</span>
+              <p>Relevant sources are converted into structured facts without using external model knowledge.</p>
+              <div class="cs-io">
+                <span class="cs-io-label">INPUT</span>
+                <span class="cs-io-item">Destination</span>
+                <span class="cs-io-item">Relevant sources</span>
+              </div>
+              <div class="cs-io">
+                <span class="cs-io-label">OUTPUT</span>
+                <span class="cs-io-item">Identity</span>
+                <span class="cs-io-item">Highlights</span>
+                <span class="cs-io-item">Experiences</span>
+              </div>
+            </article>
+
+            <article class="cs-engine">
+              <div class="cs-engine-top">
+                <span class="cs-engine-icon">
+                  <svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="8" cy="4" rx="5.5" ry="2.2"/><path d="M2.5 4v8c0 1.2 2.5 2.2 5.5 2.2s5.5-1 5.5-2.2V4M2.5 8c0 1.2 2.5 2.2 5.5 2.2s5.5-1 5.5-2.2"/></svg>
+                </span>
+                <span class="cs-engine-num">04</span>
+              </div>
+              <h3>Knowledge Node</h3>
+              <span class="cs-engine-role">REUSABLE KNOWLEDGE OBJECT</span>
+              <p>Extracted information is consolidated into a reusable destination object with source references and completeness status.</p>
+              <div class="cs-io">
+                <span class="cs-io-label">OUTPUT</span>
+                <span class="cs-io-item">Structured JSON</span>
+                <span class="cs-io-item">Source references</span>
+                <span class="cs-io-item">Missing information</span>
+                <span class="cs-io-item">Status</span>
+              </div>
+            </article>
+
+          </div>
+
+          <div class="tb-flow-strip">
+            <span class="tb-flow-k">SELECTED SOURCES</span>
+            <i>→</i><span>SOURCE RELEVANCE</span>
+            <i>→</i><span>KNOWLEDGE EXTRACTION</span>
+            <i>→</i><span>KNOWLEDGE NODE</span>
+            <i>→</i><span>STORAGE</span>
+            <i>→</i><span class="tb-flow-k">DOWNSTREAM USE</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 03 · ARCHITECTURE ============ -->
+      <section class="cs-section" id="architecture" data-watch>
+        <div class="cs-head">
+          <div class="cs-eyebrow">
+            <span class="live-dot"></span>
+            <span>03 / ARCHITECTURE</span>
+            <span class="eyebrow-sep">/</span>
+            <span class="eyebrow-dim">RETRIEVAL SEPARATED FROM GENERATION</span>
+          </div>
+          <h2 class="cs-title">System <span class="cs-title-grad">architecture</span></h2>
+          <p class="cs-sub">The Brain separates knowledge retrieval from content generation.</p>
+        </div>
+
+        <div class="cs-reveal">
+          <div class="cs-pipe-scroll">
+            <div class="cs-pipe" id="csPipe">
+              <div class="cs-pipe-track"><div class="cs-pipe-fill" id="csPipeFill"></div></div>
+              <div class="cs-pipe-nodes">
+
+                <div class="cs-node">
+                  <div class="cs-node-icon">
+                    <svg viewBox="0 0 16 16" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"/><path d="M1.5 8h13M8 1.5c2 2 2 11 0 13M8 1.5c-2 2-2 11 0 13"/></svg>
+                  </div>
+                  <span class="cs-node-name">INPUT</span>
+                  <span class="cs-node-sub">Tour + Sources</span>
+                </div>
+
+                <div class="cs-node">
+                  <div class="cs-node-icon">
+                    <svg viewBox="0 0 16 16" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 11V3M4.5 6.5L8 3l3.5 3.5M3 13h10"/></svg>
+                  </div>
+                  <span class="cs-node-name">FETCH</span>
+                  <span class="cs-node-sub">Read Sources</span>
+                </div>
+
+                <div class="cs-node">
+                  <div class="cs-node-icon">
+                    <svg viewBox="0 0 16 16" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l4 4-4 4M7 12h7"/></svg>
+                  </div>
+                  <span class="cs-node-name">MATCH</span>
+                  <span class="cs-node-sub">Source Relevance</span>
+                </div>
+
+                <div class="cs-node">
+                  <div class="cs-node-icon">
+                    <svg viewBox="0 0 16 16" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 1.5h5l3 3v10H4z"/><path d="M9 1.5v3h3M6 9h4M6 11.5h3"/></svg>
+                  </div>
+                  <span class="cs-node-name">EXTRACT</span>
+                  <span class="cs-node-sub">Place Knowledge</span>
+                </div>
+
+                <div class="cs-node">
+                  <div class="cs-node-icon">
+                    <svg viewBox="0 0 16 16" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.8l1.6 3.4 3.7.5-2.7 2.6.7 3.7L8 12.8l-3.3 1.8.7-3.7L2.7 6l3.7-.5L8 1.8z"/></svg>
+                  </div>
+                  <span class="cs-node-name">STRUCTURE</span>
+                  <span class="cs-node-sub">Knowledge Nodes</span>
+                </div>
+
+                <div class="cs-node">
+                  <div class="cs-node-icon">
+                    <svg viewBox="0 0 16 16" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="8" cy="4" rx="5.5" ry="2.2"/><path d="M2.5 4v8c0 1.2 2.5 2.2 5.5 2.2s5.5-1 5.5-2.2V4M2.5 8c0 1.2 2.5 2.2 5.5 2.2s5.5-1 5.5-2.2"/></svg>
+                  </div>
+                  <span class="cs-node-name">STORE</span>
+                  <span class="cs-node-sub">Reusable Data</span>
+                </div>
+
+                <div class="cs-node">
+                  <div class="cs-node-icon">
+                    <svg viewBox="0 0 16 16" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.5l5 2v4c0 3-2.2 5.3-5 7-2.8-1.7-5-4-5-7v-4l5-2z"/><path d="M5.8 8l1.6 1.6L10.6 6"/></svg>
+                  </div>
+                  <span class="cs-node-name">RETURN</span>
+                  <span class="cs-node-sub">Structured JSON</span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-infra">
+            <div class="cs-infra-item">
+              <span class="cs-infra-icon">
+                <svg width="24" height="24" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M80 28C80 32.4167 76.3267 36 71.7933 36C67.9733 36 64.76 33.45 63.8467 30H52.3933C50.3867 30 48.6767 31.4133 48.3467 33.3433L48.01 35.3167C47.6948 37.1411 46.7515 38.7979 45.3433 40C46.7167 41.18 47.69 42.8133 48.01 44.6833L48.3433 46.6567C48.5156 47.6027 49.017 48.4573 49.7589 49.0692C50.5007 49.6811 51.4351 50.0108 52.3967 50H55.6467C56.5567 46.55 59.77 44 63.5933 44C68.1267 44 71.7967 47.5833 71.7967 52C71.7967 56.4167 68.12 60 63.5933 60C59.77 60 56.56 57.45 55.6467 54H52.3967C48.3833 54 44.9633 51.1733 44.3033 47.3167L43.9667 45.3433C43.7946 44.3984 43.2941 43.5447 42.5537 42.9329C41.8132 42.3212 40.8804 41.9907 39.92 42H36.5667C35.54 45.28 32.4133 47.6667 28.7133 47.6667C25.0133 47.6667 21.8867 45.28 20.8633 42H16.0567C15.03 45.28 11.9033 47.6667 8.20667 47.6667C3.67333 47.6667 0 44.0833 0 39.6667C0 35.25 3.67333 31.6667 8.20667 31.6667C12.15 31.6667 15.4467 34.3833 16.2333 38H20.69C21.4767 34.3833 24.7733 31.6667 28.7167 31.6667C32.6633 31.6667 35.9567 34.3833 36.7433 38H39.9167C41.92 38 43.6333 36.5867 43.96 34.6567L44.3 32.6833C44.96 28.8267 48.3833 26 52.3933 26H63.8467C64.76 22.55 67.9733 20 71.7933 20C76.3267 20 80 23.5833 80 28ZM75.9 28C75.9 30.21 74.06 32 71.7933 32C69.5267 32 67.6933 30.21 67.6933 28C67.6933 25.79 69.5267 24 71.7933 24C74.06 24 75.8967 25.79 75.8967 28H75.9ZM8.20333 43.6667C10.47 43.6667 12.3033 41.8767 12.3033 39.6667C12.3033 37.4567 10.47 35.6667 8.20333 35.6667C5.93667 35.6667 4.1 37.4567 4.1 39.6667C4.1 41.8767 5.93667 43.6667 8.20333 43.6667ZM28.7133 43.6667C30.98 43.6667 32.8167 41.8767 32.8167 39.6667C32.8167 37.4567 30.9833 35.6667 28.7167 35.6667C26.45 35.6667 24.6133 37.4567 24.6133 39.6667C24.6133 41.8767 26.4467 43.6667 28.7133 43.6667ZM63.5867 56C65.8533 56 67.6867 54.21 67.6867 52C67.6867 49.79 65.8533 48 63.5867 48C61.32 48 59.4867 49.79 59.4867 52C59.4867 54.21 61.32 56 63.5867 56Z" fill="#68CDFB"/></svg>
+              </span>
+              <div><b>n8n</b><span>ORCHESTRATION</span></div>
+            </div>
+            <div class="cs-infra-item">
+              <span class="cs-infra-icon is-dual">
+                <svg width="19" height="19" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clipOaiTravel)"><path fill-rule="evenodd" clip-rule="evenodd" d="M23.0125 21.645V15.995C23.0125 15.52 23.1925 15.1625 23.6075 14.925L34.965 8.385C36.5125 7.4925 38.355 7.0775 40.2575 7.0775C47.3925 7.0775 51.9125 12.6075 51.9125 18.4925C51.9125 18.91 51.9125 19.385 51.8525 19.86L40.0775 12.9625C39.7577 12.7589 39.3866 12.6508 39.0075 12.6508C38.6284 12.6508 38.2573 12.7589 37.9375 12.9625L23.0125 21.645ZM49.535 43.645V30.15C49.535 29.3175 49.1775 28.725 48.4625 28.3075L33.5375 19.625L38.4125 16.83C38.5892 16.7138 38.796 16.6518 39.0075 16.6518C39.219 16.6518 39.4258 16.7138 39.6025 16.83L50.96 23.3725C54.2325 25.2725 56.4325 29.3175 56.4325 33.2425C56.4325 37.7625 53.7575 41.925 49.5325 43.65L49.535 43.645ZM19.505 31.7575L14.63 28.9025C14.2125 28.665 14.0325 28.3075 14.0325 27.8325V14.7475C14.0325 8.385 18.9075 3.5675 25.51 3.5675C28.01 3.5675 30.3275 4.4 32.29 5.8875L20.575 12.6675C19.8625 13.0825 19.505 13.6775 19.505 14.51V31.755V31.7575ZM30 37.82L23.0125 33.895V25.57L30 21.645L36.9875 25.57V33.895L30 37.82ZM34.49 55.895C31.99 55.895 29.6725 55.065 27.71 53.5775L39.425 46.7975C40.1375 46.3825 40.495 45.7875 40.495 44.955V27.71L45.43 30.565C45.8475 30.8025 46.025 31.16 46.025 31.635V44.7175C46.025 51.08 41.09 55.895 34.49 55.895ZM20.3975 42.6375L9.0375 36.095C5.7675 34.1925 3.5675 30.15 3.5675 26.225C3.55979 23.9948 4.21778 21.813 5.45723 19.959C6.69669 18.1049 8.46123 16.6629 10.525 15.8175V29.375C10.525 30.2075 10.8825 30.8025 11.595 31.22L26.4625 39.8425L21.5875 42.6375C21.4109 42.754 21.2041 42.8162 20.9925 42.8162C20.7809 42.8162 20.5741 42.754 20.3975 42.6375ZM19.7425 52.3875C13.0225 52.3875 8.0875 47.335 8.0875 41.09C8.0875 40.615 8.1475 40.14 8.205 39.665L19.92 46.44C20.635 46.8575 21.3475 46.8575 22.06 46.44L36.985 37.82V43.47C36.985 43.945 36.81 44.3025 36.3925 44.54L25.035 51.08C23.4875 51.9725 21.645 52.3875 19.7425 52.3875ZM34.49 59.4625C37.9164 59.4628 41.2377 58.2796 43.8922 56.113C46.5466 53.9464 48.3713 50.9295 49.0575 47.5725C55.7175 45.8475 60 39.6 60 33.24C60 29.0775 58.2175 25.035 55.005 22.12C55.3025 20.87 55.48 19.6225 55.48 18.375C55.48 9.8725 48.5825 3.5075 40.615 3.5075C39.01 3.5075 37.465 3.745 35.915 4.2825C33.14 1.55102 29.4063 0.0139215 25.5125 1.60604e-08C22.0858 -0.000159195 18.7641 1.18341 16.1096 3.35048C13.4551 5.51755 11.6307 8.53506 10.945 11.8925C4.2825 13.6175 0 19.8625 0 26.225C0 30.39 1.7825 34.4325 4.995 37.345C4.6975 38.595 4.52 39.845 4.52 41.0925C4.52 49.595 11.4175 55.9575 19.385 55.9575C20.99 55.9575 22.535 55.72 24.085 55.185C26.8603 57.9175 30.5953 59.4548 34.49 59.4675V59.4625Z" fill="#68CDFB"/></g><defs><clipPath id="clipOaiTravel"><rect width="60" height="60" fill="white"/></clipPath></defs></svg>
+                <svg width="18" height="18" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clipClaudeTravel)"><path d="M15.7031 53.1875L31.4375 44.3594L31.7031 43.5938L31.4375 43.1719H30.6719L28.0312 43.0156L19.0313 42.7656L11.25 42.4375L3.6875 42.0313L1.78125 41.625L0 39.2812L0.1875 38.1094L1.78125 37.0469L4.0625 37.25L9.125 37.5938L16.7188 38.125L22.2187 38.4531L30.375 39.2969H31.6719L31.8594 38.7813L31.4062 38.4531L31.0625 38.125L23.2031 32.8125L14.7031 27.1875L10.25 23.9531L7.84375 22.3125L6.625 20.7656L6.09375 17.4062L8.28125 15L11.2188 15.2031L11.9687 15.4062L14.9531 17.6875L21.3125 22.6094L29.6094 28.7188L30.8281 29.7344L31.3125 29.3906L31.375 29.1406L30.8281 28.2344L26.3125 20.0781L21.5 11.7812L19.3594 8.34375L18.7969 6.25C18.5781 5.45312 18.4687 4.64063 18.4531 3.8125L20.9531 0.4375L22.3281 -0.015625L25.6406 0.4375L27.0469 1.65625L29.1094 6.375L32.4531 13.8125L37.6406 23.9063L39.1563 26.9063L39.9688 29.6719L40.2656 30.5156H40.7969V30.0313L41.2187 24.3438L42.0156 17.3594L42.7812 8.375L43.0469 5.84375L44.2969 2.8125L46.7812 1.17187L48.7344 2.10938L50.3281 4.39063L50.1094 5.875L49.1563 12.0469L47.2969 21.7188L46.0781 28.1875H46.7812L47.5938 27.375L50.875 23.0156L56.375 16.1406L58.8125 13.4063L61.6406 10.3906L63.4688 8.95312H66.9063L69.4375 12.7188L68.2969 16.6094L64.75 21.0938L61.8125 24.9062L57.5938 30.5781L54.9531 35.1094L55.2031 35.4688L55.8281 35.4063L65.3438 33.3906L70.4844 32.4531L76.625 31.4063L79.4063 32.7031L79.7031 34.0156L78.6094 36.7031L72.0469 38.3281L64.3437 39.875L52.875 42.5781L52.7344 42.6719L52.8906 42.875L58.0469 43.3594L60.25 43.4844H65.6563L75.7188 44.2344L78.3594 45.9688L79.9375 48.0937L79.6719 49.7031L75.625 51.7656L70.1562 50.4688L57.3906 47.4375L53.0156 46.3438H52.4062V46.7031L56.0469 50.2656L62.7344 56.2969L71.0938 64.0625L71.5156 65.9844L70.4375 67.5L69.2969 67.3438L61.9531 61.8281L59.1094 59.3437L52.6875 53.9375H52.2656V54.5L53.75 56.6563L61.5625 68.3906L61.9688 71.9844L61.4062 73.1563L59.375 73.8594L57.1406 73.4531L52.6562 67.0938L47.9375 59.875L44.125 53.3906L43.6562 53.6562L41.4062 77.8438L40.3594 79.0781L37.9219 80.0156L35.9063 78.4844L34.8281 76L35.9063 71.0781L37.2031 64.6719L38.25 59.5781L39.2031 53.25L39.7656 51.1406L39.7187 51L39.25 51.0625L34.4688 57.625L27.2031 67.4375L21.4531 73.5938L20.0781 74.1406L17.6875 72.9063L17.9062 70.7031L19.25 68.7344L27.2031 58.6094L32 52.3438L35.0938 48.7187L35.0781 48.1875H34.8906L13.7656 61.8594L10 62.3594L8.375 60.8438L8.57813 58.3594L9.34375 57.5469L15.7031 53.1719C15.7188 53.1562 15.7031 53.1875 15.7031 53.1875Z" fill="#68CDFB"/></g><defs><clipPath id="clipClaudeTravel"><rect width="80" height="80" fill="white"/></clipPath></defs></svg>
+              </span>
+              <div><b>OpenAI / Claude</b><span>KNOWLEDGE PROCESSING</span></div>
+            </div>
+            <div class="cs-infra-item">
+              <span class="cs-infra-icon">
+                <svg width="24" height="24" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M34.875 58.7109C33.3633 60.6211 30.2813 59.5781 30.2461 57.1406L29.7188 21.4453H53.7187C58.0664 21.4453 60.4922 26.4609 57.7852 29.8711L34.875 58.7109Z" fill="#68CDFB"/><path d="M34.875 58.7109C33.3633 60.6211 30.2813 59.5781 30.2461 57.1406L29.7188 21.4453H53.7187C58.0664 21.4453 60.4922 26.4609 57.7852 29.8711L34.875 58.7109Z" fill="#68CDFB" fill-opacity="0.2"/><path d="M25.1247 1.28933C26.6365 -0.620825 29.7185 0.422144 29.7537 2.85964L29.988 38.5432H6.29272C1.94506 38.5432 -0.480721 33.5276 2.22631 30.1175L25.1247 1.28933Z" fill="#68CDFB"/></svg>
+              </span>
+              <div><b>Supabase</b><span>STRUCTURED STORAGE</span></div>
+            </div>
+            <div class="cs-infra-item">
+              <span class="cs-infra-icon">
+                <svg width="23" height="23" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M77.3912 55.6517H74.7825V18.9127C74.7825 13.2787 70.1991 8.69531 64.5652 8.69531H15.4356C9.78953 8.69531 5.2175 13.2458 5.21828 18.895C5.21969 29.7756 5.22266 45.3036 5.22719 55.6519H2.60875C1.16797 55.6517 0 56.8197 0 58.2605V59.4561C0 65.9889 5.315 71.3039 11.8478 71.3039H68.1522C74.685 71.3039 80 65.9889 80 59.4561V58.2605C80 56.8197 78.832 55.6517 77.3912 55.6517ZM15.4356 13.9125H64.5652C67.3222 13.9125 69.5652 16.1555 69.5652 18.9125V55.6516H10.4445C10.44 45.3038 10.437 29.775 10.4356 18.8941C10.4353 16.1359 12.6664 13.9125 15.4356 13.9125ZM68.1522 66.0866H11.8478C8.67656 66.0866 6.01812 63.8488 5.36906 60.8692C6.19516 60.8692 73.8059 60.8692 74.6311 60.8692C73.9819 63.8488 71.3234 66.0866 68.1522 66.0866Z" fill="#68CDFB"/><path d="M46.1925 19.8949C45.1739 18.8762 43.522 18.8762 42.5033 19.8949L16.4164 45.982C15.3977 47.0007 15.3977 48.6524 16.4164 49.6712C17.435 50.6899 19.0869 50.6901 20.1056 49.6712L46.1927 23.5841C47.2112 22.5654 47.2113 20.9137 46.1925 19.8949Z" fill="#68CDFB"/><path d="M63.5841 19.8941C62.5654 18.8752 60.9135 18.8752 59.8949 19.8941L33.808 45.9811C32.7893 46.9998 32.7893 48.6516 33.808 49.6703C34.8266 50.6891 36.4785 50.6892 37.4972 49.6703L63.5841 23.5833C64.603 22.5645 64.603 20.913 63.5841 19.8941Z" fill="#68CDFB"/></svg>
+              </span>
+              <div><b>Other Tools</b><span>SOURCE / DATA UTILITIES</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 04 · FROM BRAIN TO OUTPUT ============ -->
+      <section class="cs-section" id="outputs" data-watch>
+        <div class="cs-head">
+          <div class="cs-eyebrow">
+            <span class="live-dot"></span>
+            <span>04 / FROM BRAIN TO OUTPUT</span>
+            <span class="eyebrow-sep">/</span>
+            <span class="eyebrow-dim">ONE KNOWLEDGE LAYER · MULTIPLE OUTPUTS</span>
+          </div>
+          <h2 class="cs-title">One Brain. <span class="cs-title-grad">Multiple applications</span>.</h2>
+          <p class="cs-sub">The structured knowledge layer is designed to become reusable infrastructure for different travel experiences.</p>
+        </div>
+
+        <div class="tb-scope cs-reveal">
+
+          <div class="cs-col-label tb-scope-label">BUILT &amp; TESTED</div>
+          <div class="tb-built">
+
+            <article class="tb-built-card">
+              <div class="tb-built-top">
+                <span class="tb-built-num">01</span>
+                <span class="tb-built-status">STATUS: WORKING</span>
+              </div>
+              <div class="tb-built-name">
+                <svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="4" cy="4" r="2"/><circle cx="12" cy="4" r="2"/><circle cx="8" cy="12" r="2"/><path d="M5.5 5.3L10 10.7M10.5 5.3L6 10.7M6 4h4"/></svg>
+                <b>TRAVEL KNOWLEDGE BRAIN</b>
+              </div>
+              <p class="tb-built-desc">Transforms selected travel sources into structured destination knowledge, connected to the sources it comes from.</p>
+            </article>
+
+            <article class="tb-built-card">
+              <div class="tb-built-top">
+                <span class="tb-built-num">02</span>
+                <span class="tb-built-status">STATUS: WORKING / TESTED</span>
+              </div>
+              <div class="tb-built-name">
+                <svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 4l4.3-2 4.4 2 4.3-2v10l-4.3 2-4.4-2-4.3 2z"/><path d="M5.8 2v10M10.2 4v10"/></svg>
+                <b>AI TRAVEL MAP</b>
+              </div>
+              <p class="tb-built-desc">Transforms verified geographic data into structured map references before the AI visual transformation.</p>
+            </article>
+
+          </div>
+
+          <div class="tb-future">
+            <div class="tb-future-head">
+              <span class="cs-col-label tb-scope-label">DESIGNED FOR FUTURE USE</span>
+              <span class="tb-future-note">Planned applications of the same knowledge layer. Not built yet.</span>
+            </div>
+            <div class="tb-mods">
+              <span class="tb-mod">
+                <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h10M3 8h10M3 12h6"/></svg>
+                <span class="tb-mod-name">TRAVEL STORY ENGINE</span><span class="tb-mod-tag">PLANNED APPLICATION</span>
+              </span>
+              <span class="tb-mod">
+                <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="10" rx="1.5"/><path d="M5 7h6M5 10h4"/></svg>
+                <span class="tb-mod-name">LANDING GENERATOR</span><span class="tb-mod-tag">PLANNED APPLICATION</span>
+              </span>
+              <span class="tb-mod">
+                <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="10" rx="1.5"/><circle cx="6" cy="7" r="1.3"/><path d="M14 11l-3.5-3.5L4 14"/></svg>
+                <span class="tb-mod-name">ADV / CAMPAIGN OUTPUT</span><span class="tb-mod-tag">PLANNED APPLICATION</span>
+              </span>
+              <span class="tb-mod">
+                <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="4" cy="8" r="1"/><circle cx="8" cy="8" r="1"/><circle cx="12" cy="8" r="1"/></svg>
+                <span class="tb-mod-name">OTHER</span><span class="tb-mod-tag">PLANNED APPLICATION</span>
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ============ 05 · WHY NOT JUST AI? ============ -->
+      <section class="cs-section" id="why" data-watch>
+        <div class="cs-head">
+          <div class="cs-eyebrow">
+            <span class="live-dot"></span>
+            <span>05 / WHY NOT JUST AI?</span>
+            <span class="eyebrow-sep">/</span>
+            <span class="eyebrow-dim">WHAT STRUCTURED KNOWLEDGE SOLVES</span>
+          </div>
+          <h2 class="cs-title">Why not just <span class="cs-title-grad">ask AI</span>?</h2>
+          <p class="cs-sub">Because generation and factual grounding are two different problems.</p>
+        </div>
+
+        <div class="cs-reveal">
+          <div class="tb-why">
+
+            <article class="cs-challenge">
+              <h3>
+                <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"/><path d="M8 1.5c2 2 2 11 0 13M8 1.5c-2 2-2 11 0 13M1.5 8h13"/></svg>
+                Route control
+              </h3>
+              <div class="cs-pao">
+                <div class="cs-pao-row"><b>PROBLEM</b><span>When the route lives only inside a prompt, stop placement and sequence are harder to control and to reproduce consistently across maps.</span></div>
+                <div class="cs-pao-row"><b>SYSTEM RESPONSE</b><span>Coordinates and geographic structure are defined before generation.</span></div>
+                <div class="cs-pao-row outcome"><b>RESULT</b><span>AI transforms the visual layer, not the underlying geography.</span></div>
+              </div>
+            </article>
+
+            <article class="cs-challenge">
+              <h3>
+                <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.5l5 2v4c0 3-2.2 5.3-5 7-2.8-1.7-5-4-5-7v-4l5-2z"/><path d="M5.8 8l1.6 1.6L10.6 6"/></svg>
+                Knowledge without provenance
+              </h3>
+              <div class="cs-pao">
+                <div class="cs-pao-row"><b>PROBLEM</b><span>A generated travel answer can mix model knowledge with information from unknown origins.</span></div>
+                <div class="cs-pao-row"><b>SYSTEM RESPONSE</b><span>The Brain extracts only from supplied sources and preserves source references for each destination.</span></div>
+                <div class="cs-pao-row outcome"><b>RESULT</b><span>Generated experiences can be built on traceable structured knowledge.</span></div>
+              </div>
+            </article>
+
+            <article class="cs-challenge">
+              <h3>
+                <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="5" height="5" rx="1.2"/><rect x="9" y="2" width="5" height="5" rx="1.2"/><rect x="2" y="9" width="5" height="5" rx="1.2"/><rect x="9" y="9" width="5" height="5" rx="1.2"/></svg>
+                Inconsistent outputs
+              </h3>
+              <div class="cs-pao">
+                <div class="cs-pao-row"><b>PROBLEM</b><span>Independent prompts can produce different structures, terminology and levels of detail.</span></div>
+                <div class="cs-pao-row"><b>SYSTEM RESPONSE</b><span>Knowledge is normalized into a shared schema before downstream generation.</span></div>
+                <div class="cs-pao-row outcome"><b>RESULT</b><span>Different outputs can consume the same structured destination layer.</span></div>
+              </div>
+            </article>
+
+          </div>
+
+          <div class="tb-missing">
+            <b>DESIGN PRINCIPLE</b>
+            <span>In this system, AI transforms a trusted structure instead of inventing the structure it depends on.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 06 · WORKING OUTPUT ============ -->
+      <section class="cs-section" id="proof" data-watch>
+        <div class="cs-head">
+          <div class="cs-eyebrow">
+            <span class="live-dot"></span>
+            <span>06 / WORKING OUTPUT</span>
+            <span class="eyebrow-sep">/</span>
+            <span class="eyebrow-dim">AI MAP ENGINE</span>
+          </div>
+          <h2 class="cs-title">From verified stops<br />to <span class="cs-title-grad">generated maps</span>.</h2>
+          <p class="cs-sub">The map engine separates geographic truth from visual generation: coordinates define the structure, AI defines the visual language.</p>
+        </div>
+
+        <div class="tb-proof cs-reveal">
+
+          <div class="tb-proof-steps">
+            <span class="tb-proof-badge"><span class="live-dot"></span>20 MAPS TESTED</span>
+            <p class="tb-fan-desc">Generated across multiple countries to evaluate geographic fidelity and visual consistency.</p>
+            <div class="tb-flags">
+              <span class="tb-flag">MOROCCO</span>
+              <span class="tb-flag">UZBEKISTAN</span>
+              <span class="tb-flag">MEXICO</span>
+              <span class="tb-flag">CHINA</span>
+              <span class="tb-flag">IRELAND</span>
+              <span class="tb-flag">SPAIN</span>
+            </div>
+            <div class="tb-pstep"><b>01</b><div class="tb-pstep-copy"><span class="tb-pstep-name">STRUCTURE</span><span>Retrieve or provide verified coordinates for each tour stop.</span></div></div>
+            <div class="tb-pstep"><b>02</b><div class="tb-pstep-copy"><span class="tb-pstep-name">GEOGRAPHY</span><span>Build the route and geographic structure before AI generation.</span></div></div>
+            <div class="tb-pstep"><b>03</b><div class="tb-pstep-copy"><span class="tb-pstep-name">GENERATION</span><span>Transform the structured reference into a visual travel map while preserving the underlying route.</span></div></div>          </div>
+
+          <!-- map output viewer · image sources live in js/case-travel.js (TB_MAP_OUTPUTS) -->
+          <div class="tb-proof-dash tb-mv">
+            <div class="tb-proof-dash-head">
+              <span>MAP OUTPUT VIEWER</span>
+              <span class="tb-proof-dash-chip">6 EXAMPLES</span>
+            </div>
+            <div class="tb-mv-body">
+              <div class="tb-mv-stage">
+                <figure class="tb-mv-slide" data-map="morocco" id="tbMapMorocco" role="tabpanel" aria-labelledby="tbMapTabMorocco">
+                  <img loading="lazy" decoding="async" alt="AI-generated travel map output: Morocco" />
+                  <figcaption class="tb-mv-pending">MAP ASSET PENDING</figcaption>
+                </figure>
+                <figure class="tb-mv-slide" data-map="uzbekistan" id="tbMapUzbekistan" role="tabpanel" aria-labelledby="tbMapTabUzbekistan">
+                  <img loading="lazy" decoding="async" alt="AI-generated travel map output: Uzbekistan" />
+                  <figcaption class="tb-mv-pending">MAP ASSET PENDING</figcaption>
+                </figure>
+                <figure class="tb-mv-slide" data-map="mexico" id="tbMapMexico" role="tabpanel" aria-labelledby="tbMapTabMexico">
+                  <img loading="lazy" decoding="async" alt="AI-generated travel map output: Mexico" />
+                  <figcaption class="tb-mv-pending">MAP ASSET PENDING</figcaption>
+                </figure>
+                <figure class="tb-mv-slide" data-map="china" id="tbMapChina" role="tabpanel" aria-labelledby="tbMapTabChina">
+                  <img loading="lazy" decoding="async" alt="AI-generated travel map output: China" />
+                  <figcaption class="tb-mv-pending">MAP ASSET PENDING</figcaption>
+                </figure>
+                <figure class="tb-mv-slide" data-map="ireland" id="tbMapIreland" role="tabpanel" aria-labelledby="tbMapTabIreland">
+                  <img loading="lazy" decoding="async" alt="AI-generated travel map output: Ireland" />
+                  <figcaption class="tb-mv-pending">MAP ASSET PENDING</figcaption>
+                </figure>
+                <figure class="tb-mv-slide" data-map="spain" id="tbMapSpain" role="tabpanel" aria-labelledby="tbMapTabSpain">
+                  <img loading="lazy" decoding="async" alt="AI-generated travel map output: Spain" />
+                  <figcaption class="tb-mv-pending">MAP ASSET PENDING</figcaption>
+                </figure>
+              </div>
+              <div class="tb-mv-tabs" role="tablist" aria-label="Generated map examples">
+                <button type="button" class="tb-mv-tab" role="tab" id="tbMapTabMorocco" data-map="morocco" aria-controls="tbMapMorocco">MOROCCO</button>
+                <button type="button" class="tb-mv-tab" role="tab" id="tbMapTabUzbekistan" data-map="uzbekistan" aria-controls="tbMapUzbekistan">UZBEKISTAN</button>
+                <button type="button" class="tb-mv-tab" role="tab" id="tbMapTabMexico" data-map="mexico" aria-controls="tbMapMexico">MEXICO</button>
+                <button type="button" class="tb-mv-tab" role="tab" id="tbMapTabChina" data-map="china" aria-controls="tbMapChina">CHINA</button>
+                <button type="button" class="tb-mv-tab" role="tab" id="tbMapTabIreland" data-map="ireland" aria-controls="tbMapIreland">IRELAND</button>
+                <button type="button" class="tb-mv-tab" role="tab" id="tbMapTabSpain" data-map="spain" aria-controls="tbMapSpain">SPAIN</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ============ 07 · BUILD / TEST / LEARN ============ -->
+      <section class="cs-section" id="state" data-watch>
+        <div class="cs-head">
+          <div class="cs-eyebrow">
+            <span class="live-dot"></span>
+            <span>07 / BUILD · TEST · LEARN</span>
+            <span class="eyebrow-sep">/</span>
+            <span class="eyebrow-dim">PROJECT MATURITY, MADE TRANSPARENT</span>
+          </div>
+          <h2 class="cs-title">Built. <span class="cs-title-grad">Learned</span>.</h2>
+        </div>
+
+        <div class="cs-reveal">
+          <div class="tb-state">
+
+            <div class="tb-state-col is-built">
+              <div class="tb-state-head">BUILT</div>
+              <span class="tb-state-item">Multi-source ingestion</span>
+              <span class="tb-state-item">Source relevance matching</span>
+              <span class="tb-state-item">Structured place extraction</span>
+              <span class="tb-state-item">Source-linked Knowledge Nodes</span>
+              <span class="tb-state-item">Structured JSON output</span>
+              <span class="tb-state-item">AI Travel Map based on verified coordinates</span>
+            </div>
+
+            <div class="tb-state-col is-testing">
+              <div class="tb-state-head">LEARNED</div>
+              <span class="tb-state-item">Source grounding requires explicit architecture</span>
+              <span class="tb-state-item">Long multi-source prompts do not scale efficiently</span>
+              <span class="tb-state-item">Fixing geography before generation gave more control over the route</span>
+              <span class="tb-state-item">Separating structure from visual generation made control and repeatability explicit parts of the workflow</span>
+              <span class="tb-state-item">Reusable structured data is more valuable than isolated prompts</span>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 08 · NEXT STEPS ============ -->
+      <section class="cs-section" id="next" data-watch>
+        <div class="cs-head">
+          <div class="cs-eyebrow">
+            <span class="live-dot"></span>
+            <span>08 / NEXT STEPS</span>
+            <span class="eyebrow-sep">/</span>
+            <span class="eyebrow-dim">WHERE THE BRAIN GOES NEXT</span>
+          </div>
+          <h2 class="cs-title">What's next for the <span class="cs-title-grad">Travel Brain</span>.</h2>
+        </div>
+
+        <div class="cs-road cs-reveal">
+          <div class="cs-mile" tabindex="0">
+            <span class="cs-mile-num">01</span>
+            <b>Scale Sources</b>
+            <p>Move fully to source-by-source extraction and consolidation.</p>
+          </div>
+          <div class="cs-mile" tabindex="0">
+            <span class="cs-mile-num">02</span>
+            <b>Expand Knowledge</b>
+            <p>Build a reusable destination knowledge base beyond individual tours.</p>
+          </div>
+          <div class="cs-mile" tabindex="0">
+            <span class="cs-mile-num">03</span>
+            <b>Validate Maps</b>
+            <p>Expand geographic testing across more route types and destinations.</p>
+          </div>
+          <div class="cs-mile" tabindex="0">
+            <span class="cs-mile-num">04</span>
+            <b>Story Engine</b>
+            <p>Connect structured Knowledge Nodes to itinerary and destination storytelling.</p>
+          </div>
+          <div class="cs-mile" tabindex="0">
+            <span class="cs-mile-num">05</span>
+            <b>Multi-Output System</b>
+            <p>Use the same trusted knowledge layer across maps, landing pages and campaign content.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ FINAL CTA ============ -->
+      <section class="cs-section" id="cta" data-watch>
+        <div class="cs-cta-panel glass cs-reveal">
+          <span class="cs-cta-eyebrow"><span class="live-dot"></span>END OF CASE 02</span>
+          <h2 class="cs-cta-title">Ground the facts.<br />Then let AI create.</h2>
+          <p class="cs-cta-sub">
+            The Travel Brain creates a reusable factual layer from selected sources. The Map
+            Engine shows how that structured foundation can drive generative outputs without
+            giving AI control over the underlying truth.
+          </p>
+          <div class="cs-cta-actions">
+            <a class="cs-btn cs-btn-primary" href="index.html#hero">ALL PROJECTS</a>
+          </div>
+        </div>
+      </section>
+
+      <footer class="cs-footer">
+        <span>NMX © 2026</span>
+        <span>AI WORKFLOW PORTFOLIO · CASE 02 / 03</span>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="js/case.js"></script>
+  <script src="js/i18n-dict.js"></script>
+  <script src="js/utility-bar.js"></script>
+  <script src="js/side-nav.js"></script>
+  <script src="js/case-travel.js"></script>
+</body>
+</html>
