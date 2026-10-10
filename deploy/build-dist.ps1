@@ -7,7 +7,8 @@
 
   PUBLIC (copied):
     index.html, case-photo-evaluation.html, case-travel-brain.html,
-    case-nquadro.html, case-elementa.html, css/, js/, assets/
+    case-nquadro.html, case-elementa.html, css/, js/, assets/,
+    demo/ (unlisted client demos, noindex, e.g. demo/frittoking/)
 
   EXCLUDED (everything else, e.g.):
     index-bg-test.html, nmx-logo.html, .claude/, internal *.md
@@ -29,7 +30,7 @@ $pages = @(
   'case-nquadro.html',
   'case-elementa.html'
 )
-$dirs = @('css', 'js', 'assets')
+$dirs = @('css', 'js', 'assets', 'demo')
 
 # Archive/source assets kept locally but never published (also in .gitignore).
 # Wildcard patterns, relative to the project root.

@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Richiesta ordine (demo) · Frittoking</title>
+  <meta name="description" content="Versione B (demo): catalogo Frittoking con richiesta d'ordine via WhatsApp">
+  <!-- Demo di presentazione: non indicizzare. -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#161624">
+  <link rel="icon" href="assets/logo-frittoking.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="assets/styles.css?v=13">
+  <link rel="stylesheet" href="assets/order.css?v=1">
+</head>
+<body class="has-order-bar">
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <a class="navbar__brand" href="versione-b.html" aria-label="Frittoking – Catalogo prodotti, versione B">
+        <img src="assets/logo-frittoking.svg" alt="Frittoking" width="80" height="44">
+      </a>
+    </div>
+  </header>
+
+  <div class="demo-banner">
+    <div class="container demo-banner__inner">
+      <p class="demo-banner__text"><strong>Versione B · Demo</strong> Simulazione: nessun ordine viene registrato o inviato automaticamente.</p>
+      <button class="demo-banner__reset" type="button" id="order-reset-demo">Azzera demo</button>
+    </div>
+  </div>
+
+  <main class="container">
+    <h1 class="page-title">CATALOGO PRODOTTI</h1>
+    <p class="order-intro">Scegli quanti cartoni ti servono, poi invia la richiesta su WhatsApp. Frittoking verifica disponibilità e dettagli prima di confermare.</p>
+
+    <div class="type-selector" role="tablist" aria-label="Tipologia prodotto">
+      <button class="type-selector__tab" type="button" role="tab" id="tab-bianche" data-type="BIANCHE" aria-controls="product-panel">BIANCHE</button>
+      <button class="type-selector__tab" type="button" role="tab" id="tab-farcite" data-type="FARCITE" aria-controls="product-panel">FARCITE</button>
+    </div>
+
+    <section id="product-panel" role="tabpanel" tabindex="-1">
+      <ul class="product-list" id="product-list"></ul>
+      <p class="product-list__empty" id="product-list-empty" hidden>Nessun prodotto in questa tipologia.</p>
+
+      <section class="contact" aria-labelledby="contact-title">
+        <h2 class="contact__title" id="contact-title">Hai bisogno di maggiori informazioni?</h2>
+        <div class="contact__actions">
+          <a class="button button--primary contact__phone" id="contact-phone">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M6.6 3.5h2.6l1.4 4-2 1.5a12 12 0 0 0 6.4 6.4l1.5-2 4 1.4v2.6a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+            Chiamaci
+          </a>
+          <a class="button button--secondary contact__email" id="contact-email">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Inviaci una email
+          </a>
+        </div>
+        <p class="contact__todo" id="contact-todo" hidden></p>
+      </section>
+    </section>
+  </main>
+
+  <!-- Barra riepilogo fissa -->
+  <div class="order-bar" id="order-bar">
+    <div class="order-bar__inner">
+      <button class="order-bar__button" type="button" id="order-bar-button" aria-haspopup="dialog" aria-controls="order-dialog" disabled>
+        <span class="order-bar__text">
+          <span class="order-bar__count" id="order-bar-count">Nessun prodotto selezionato</span>
+          <span class="order-bar__hint" id="order-bar-hint">Usa + per aggiungere cartoni</span>
+        </span>
+        <span class="order-bar__cta">
+          Vedi richiesta
+          <svg viewBox="0 0 16 10" width="14" height="9" aria-hidden="true" focusable="false"><path d="M1.5 8.5 8 2l6.5 6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+  <p class="visually-hidden" id="order-status" role="status" aria-live="polite"></p>
+
+  <!-- Riepilogo richiesta -->
+  <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+    <div class="order-dialog__panel">
+      <header class="order-dialog__header">
+        <h2 class="order-dialog__title" id="order-dialog-title">La tua richiesta</h2>
+        <button class="order-dialog__close" type="button" id="order-dialog-close" aria-label="Chiudi riepilogo">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </header>
+
+      <div class="order-dialog__body">
+        <p class="order-notice">
+          <strong>Simulazione: non è un ordine.</strong>
+          In questa demo il messaggio WhatsApp non ha destinatario aziendale ed è marcato come simulazione: nessuna richiesta arriva a Frittoking.
+        </p>
+
+        <ul class="order-lines" id="order-lines"></ul>
+        <p class="order-empty" id="order-empty" hidden>Nessun prodotto nella richiesta. Chiudi il riepilogo e scegli i cartoni dal catalogo.</p>
+
+        <dl class="order-totals" id="order-totals">
+          <div class="order-totals__row">
+            <dt>Totale cartoni</dt>
+            <dd id="order-total-cartons">0</dd>
+          </div>
+          <div class="order-totals__row order-totals__row--value">
+            <dt>Totale indicativo</dt>
+            <dd id="order-total-value">—</dd>
+          </div>
+        </dl>
+        <p class="order-totals__note" id="order-total-note"></p>
+
+        <details class="order-preview">
+          <summary>Anteprima del messaggio WhatsApp</summary>
+          <pre class="order-preview__text" id="order-preview-text"></pre>
+        </details>
+      </div>
+
+      <footer class="order-dialog__footer">
+        <button class="button order-whatsapp" type="button" id="order-whatsapp">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="M4.5 19.5l1.1-3.9A8 8 0 1 1 8.6 18.6Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.2 8.6c.2-.5.6-.5.9-.5h.4c.2 0 .4.1.5.4l.6 1.4c.1.2 0 .5-.1.6l-.5.6c.6 1.1 1.4 1.9 2.5 2.5l.6-.5c.2-.2.4-.2.6-.1l1.4.6c.3.1.4.3.4.5v.4c0 .3 0 .7-.5.9-.6.3-1.6.5-3.2-.4a8.6 8.6 0 0 1-3.2-3.2c-.9-1.6-.7-2.6-.4-3.2Z" fill="currentColor"/></svg>
+          Prova l'invio su WhatsApp (simulazione)
+        </button>
+        <p class="order-whatsapp__todo" id="order-whatsapp-todo" hidden>
+          <strong>Da completare:</strong> numero WhatsApp aziendale non ancora inserito.
+          Per ora WhatsApp chiederà a quale contatto inviare il messaggio.
+        </p>
+        <button class="order-clear" type="button" id="order-clear">Svuota richiesta</button>
+      </footer>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="data/products.js?v=13"></script>
+  <script src="data/site.js?v=13"></script>
+  <script src="assets/app.js?v=13"></script>
+  <script src="assets/order.js?v=2"></script>
+</body>
+</html>
